@@ -36,16 +36,16 @@
         assets: {
             faviconSvg: "./assets/icons/favicon.svg",
             images: {
-                heroMain: "./assets/images/hero-main.jpg",
-                heroGoogleAds: "./assets/images/hero-google-ads.jpg",
-                heroSeo: "./assets/images/hero-seo.jpg",
-                heroSocialMedia: "./assets/images/hero-social-media.jpg",
-                heroWebDesign: "./assets/images/hero-web-design.jpg",
-                heroConversion: "./assets/images/hero-conversion.jpg",
-                heroLocalSeo: "./assets/images/hero-local-seo.jpg",
-                aboutAgency: "./assets/images/about-agency.jpg",
-                processTeam: "./assets/images/process-team.jpg",
-                ctaBg: "./assets/images/cta-bg.jpg"
+                heroMain: "../assets/images/hero-main.jpg",
+                heroGoogleAds: "../assets/images/hero-google-ads.jpg",
+                heroSeo: "../assets/images/hero-seo.jpg",
+                heroSocialMedia: "../assets/images/hero-social-media.jpg",
+                heroWebDesign: "../assets/images/hero-web-design.jpg",
+                heroConversion: "../assets/images/hero-conversion.jpg",
+                heroLocalSeo: "../assets/images/hero-local-seo.jpg",
+                aboutAgency: "../assets/images/about-agency.jpg",
+                processTeam: "../assets/images/process-team.jpg",
+                ctaBg: "../assets/images/cta-bg.jpg"
             }
         },
 
@@ -359,7 +359,7 @@
                 eyebrow: "Digital Marketing & Advertising Agency",
                 title: "Strategy-led marketing for clearer visibility and smarter growth.",
                 text: "PATNA s.r.o. helps businesses improve visibility, attract qualified leads, and turn marketing activity into measurable growth through Google Ads, SEO, social media, web design, and conversion-focused strategy.",
-                image: "./assets/images/hero-main.jpg",
+                image: "../assets/images/hero-main.jpg",
                 badges: ["Google Ads", "SEO", "Web Design", "Conversion Strategy"]
             },
             stats: [

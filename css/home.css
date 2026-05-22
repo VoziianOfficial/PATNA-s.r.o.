@@ -5410,4 +5410,95 @@
     .approach-rail__detail {
         margin-top: 24px !important;
     }
+}/* TABLET / MOBILE — CENTER MAIN SECTION HEADINGS */
+@media (max-width: 1080px) {
+
+    .benefits-section .section-heading,
+    .approach-section .section-heading,
+    .faq-contact .section-heading {
+        width: 100% !important;
+        max-width: 860px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    #benefits-title,
+    #approach-title,
+    #contact-title {
+        max-width: 860px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    .benefits-section .section-heading p:not(.eyebrow),
+    .approach-section .section-heading p:not(.eyebrow),
+    .faq-contact .section-heading p:not(.eyebrow) {
+        max-width: 720px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    .benefits-section .eyebrow,
+    .approach-section .eyebrow,
+    .faq-contact .eyebrow {
+        justify-content: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .approach-sticky {
+        text-align: center !important;
+    }
+
+    .approach-sticky .btn-row {
+        justify-content: center !important;
+    }
+}
+
+/* MOBILE — tighter centered headings */
+@media (max-width: 640px) {
+
+    .benefits-section .section-heading,
+    .approach-section .section-heading,
+    .faq-contact .section-heading {
+        max-width: 100% !important;
+        text-align: center !important;
+    }
+
+    #benefits-title,
+    #approach-title,
+    #contact-title {
+        max-width: 100% !important;
+        text-align: center !important;
+    }
+
+    .benefits-section .section-heading p:not(.eyebrow),
+    .approach-section .section-heading p:not(.eyebrow),
+    .faq-contact .section-heading p:not(.eyebrow) {
+        max-width: 100% !important;
+        text-align: center !important;
+    }
+
+    .approach-sticky,
+    .faq-contact__layout>div:first-child {
+        text-align: center !important;
+    }
+}
+
+/* ABOUT TITLE — ONE LINE CENTERED ON TABLET */
+@media (min-width: 641px) and (max-width: 1080px) {
+    .about-editorial-card h2 {
+        max-width: 100% !important;
+        text-align: center !important;
+        white-space: nowrap;
+        font-size: clamp(2.6rem, 5.6vw, 4.2rem) !important;
+        line-height: 1 !important;
+    }
+
+    .about-editorial-card h2 span {
+        display: inline !important;
+    }
 }
