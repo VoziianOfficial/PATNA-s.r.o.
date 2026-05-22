@@ -314,12 +314,17 @@
         if (!container) return;
 
         container.innerHTML = details.process.map((item, index) => `
-            <article class="service-process-card glass-card" data-aos="fade-up" data-aos-delay="${index * 75}">
-                <strong>${String(index + 1).padStart(2, "0")}</strong>
+        <article class="service-road__step" data-aos="fade-up" data-aos-delay="${index * 75}">
+            <span class="service-road__step-index">
+                ${String(index + 1).padStart(2, "0")}
+            </span>
+
+            <div class="service-road__step-copy">
                 <h3>${item}</h3>
                 <p>${buildProcessDescription(item)}</p>
-            </article>
-        `).join("");
+            </div>
+        </article>
+    `).join("");
     }
 
     function buildProcessDescription(title) {
@@ -346,7 +351,7 @@
 
             "Review current funnel": "Map the journey from traffic source to inquiry and identify unclear or weak steps.",
             "Find friction points": "Look for confusing copy, weak CTAs, heavy forms, layout issues, or trust gaps.",
-            "Refine page actions": "Adjust page flow, call-to-action placement, and form presentation.",
+            "Refine page actions": "Adjust page flow, call-to-action placement, and form presentation to improve user experience.",
             "Measure and iterate": "Review changes through tracking signals and refine based on what becomes clearer.",
 
             "Review local presence": "Check local profile quality, location information, citations, and search relevance.",

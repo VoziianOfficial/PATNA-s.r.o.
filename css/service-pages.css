@@ -1791,3 +1791,451 @@
         opacity: 0.22;
     }
 }
+
+/* METHOD ITEMS — PREMIUM GRAY HOVER */
+.method-list .method-item {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    cursor: default;
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        background var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.method-list .method-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    background:
+        radial-gradient(circle at 18% 10%, rgba(255, 255, 255, 0.65), transparent 38%),
+        linear-gradient(135deg, #f2f4f7 0%, #dfe4eb 52%, #cfd6df 100%);
+    transform: translateY(10px);
+    transition:
+        opacity var(--transition-base),
+        transform var(--transition-base);
+}
+
+.method-list .method-item::after {
+    content: "";
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    top: 0;
+    height: 2px;
+    z-index: 1;
+    opacity: 0;
+    background: linear-gradient(90deg, #737b86, #c9ced6, transparent);
+    transform: translateX(-24%);
+    transition:
+        opacity var(--transition-base),
+        transform 650ms ease;
+}
+
+.method-list .method-item:hover {
+    transform: translateY(-6px) !important;
+    border-color: rgba(15, 18, 25, 0.22) !important;
+    background: #e6eaf0 !important;
+    box-shadow:
+        0 28px 72px rgba(13, 20, 33, 0.16),
+        0 0 0 1px rgba(15, 18, 25, 0.04) !important;
+}
+
+.method-list .method-item:hover::before {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.method-list .method-item:hover::after {
+    opacity: 1;
+    transform: translateX(18%);
+}
+
+/* number badge */
+.method-list .method-item>span {
+    position: relative;
+    z-index: 2;
+    border-radius: 0 !important;
+    transition:
+        transform var(--transition-base),
+        color var(--transition-base),
+        background var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.method-list .method-item:hover>span {
+    transform: translateY(-2px);
+    color: #101216 !important;
+    background:
+        linear-gradient(135deg, #ffffff 0%, #e5e9ef 48%, #b9c1cc 100%) !important;
+    box-shadow:
+        0 16px 34px rgba(13, 20, 33, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* text */
+.method-list .method-item h3,
+.method-list .method-item p,
+.method-list .method-item div {
+    position: relative;
+    z-index: 2;
+}
+
+.method-list .method-item h3,
+.method-list .method-item p {
+    transition: color var(--transition-base);
+}
+
+.method-list .method-item:hover h3 {
+    color: #101216 !important;
+}
+
+.method-list .method-item:hover p {
+    color: #48505b !important;
+}
+
+/* mobile — softer hover */
+@media (max-width: 680px) {
+    .method-list .method-item:hover {
+        transform: translateY(-3px) !important;
+    }
+
+    .method-list .method-item::after {
+        left: 18px;
+        right: 18px;
+    }
+}
+
+
+/* SERVICE ROAD — PROCESS STEPS REDESIGN */
+.service-road {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(78px, 7vw, 116px) 0 !important;
+    color: var(--color-white);
+    background:
+        radial-gradient(circle at 14% 18%, rgba(31, 95, 255, 0.16), transparent 30rem),
+        radial-gradient(circle at 86% 74%, rgba(255, 255, 255, 0.065), transparent 28rem),
+        linear-gradient(180deg, #080a0e 0%, #11141a 100%) !important;
+}
+
+.service-road::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    opacity: 0.2;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 86px 86px;
+    mask-image: linear-gradient(180deg, black, transparent 86%);
+}
+
+.service-road::after {
+    content: "";
+    position: absolute;
+    left: -180px;
+    bottom: -240px;
+    z-index: -1;
+    width: 560px;
+    height: 560px;
+    border-radius: 999px;
+    background: rgba(31, 95, 255, 0.12);
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.service-road__heading {
+    margin-bottom: clamp(36px, 5vw, 64px);
+}
+
+.service-road__heading h2 {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-road__heading p:not(.eyebrow) {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(216, 221, 229, 0.74);
+}
+
+/* Track */
+.service-road__track {
+    position: relative;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.service-road__track::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 72px;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(160, 168, 180, 0.28),
+            rgba(255, 255, 255, 0.58),
+            rgba(160, 168, 180, 0.28),
+            transparent);
+    background-size: 240% 100%;
+    animation: serviceRoadLine 6s linear infinite;
+}
+
+/* Step */
+.service-road__step {
+    position: relative;
+    min-height: 310px;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    align-content: start;
+    gap: 18px;
+    padding: 34px 28px 30px;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.025);
+    transition:
+        transform var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.service-road__step:last-child {
+    border-right: 0;
+}
+
+.service-road__step::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 46%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.025));
+    transform: translateY(14px);
+    transition:
+        opacity var(--transition-base),
+        transform var(--transition-base);
+}
+
+.service-road__step::after {
+    content: "";
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    top: 0;
+    height: 2px;
+    z-index: 1;
+    opacity: 0.42;
+    background: linear-gradient(90deg, #777f8b, #d6dbe3, transparent);
+    transform: translateX(-26%);
+    animation: serviceRoadSmallLine 4.8s ease-in-out infinite;
+}
+
+.service-road__step:nth-child(2)::after {
+    animation-delay: 0.7s;
+}
+
+.service-road__step:nth-child(3)::after {
+    animation-delay: 1.4s;
+}
+
+.service-road__step:nth-child(4)::after {
+    animation-delay: 2.1s;
+}
+
+.service-road__step:hover {
+    transform: translateY(-8px);
+    border-color: rgba(216, 221, 229, 0.32);
+    background: rgba(255, 255, 255, 0.075);
+    box-shadow:
+        0 30px 84px rgba(0, 0, 0, 0.28),
+        0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.service-road__step:hover::before {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-road__step:hover::after {
+    opacity: 1;
+    animation-duration: 2.8s;
+}
+
+/* Inner elements */
+.service-road__step-index,
+.service-road__step-copy {
+    position: relative;
+    z-index: 2;
+}
+
+.service-road__step-index {
+    color: rgba(255, 255, 255, 0.26);
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 5.4vw, 5.4rem);
+    font-weight: 700;
+    line-height: 0.86;
+    letter-spacing: -0.09em;
+    transition:
+        color var(--transition-base),
+        transform var(--transition-base);
+}
+
+.service-road__step:hover .service-road__step-index {
+    color: rgba(255, 255, 255, 0.42);
+    transform: translateY(-3px);
+}
+
+.service-road__step-copy h3 {
+    margin: 0 0 10px;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 1.26rem;
+    font-weight: 750;
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+}
+
+.service-road__step-copy p {
+    margin: 0;
+    color: rgba(216, 221, 229, 0.68);
+    font-size: 0.92rem;
+    line-height: 1.62;
+}
+
+.service-road__step:hover .service-road__step-copy p {
+    color: rgba(244, 246, 248, 0.78);
+}
+
+/* Animations */
+@keyframes serviceRoadLine {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 240% 50%;
+    }
+}
+
+@keyframes serviceRoadSmallLine {
+    0% {
+        transform: translateX(-30%);
+        opacity: 0.28;
+    }
+
+    50% {
+        transform: translateX(28%);
+        opacity: 0.88;
+    }
+
+    100% {
+        transform: translateX(-30%);
+        opacity: 0.28;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1180px) {
+    .service-road {
+        padding: 74px 0 !important;
+    }
+
+    .service-road__track {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .service-road__track::before {
+        display: none;
+    }
+
+    .service-road__step {
+        min-height: 260px;
+        padding: 30px 26px;
+    }
+
+    .service-road__step:nth-child(2) {
+        border-right: 0;
+    }
+
+    .service-road__step:nth-child(-n + 2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+}
+
+/* Mobile */
+@media (max-width: 680px) {
+    .service-road {
+        padding: 56px 0 !important;
+    }
+
+    .service-road__heading {
+        margin-bottom: 30px;
+    }
+
+    .service-road__track {
+        grid-template-columns: 1fr !important;
+    }
+
+    .service-road__step {
+        min-height: auto;
+        grid-template-columns: 70px minmax(0, 1fr);
+        grid-template-rows: auto;
+        gap: 12px 16px;
+        padding: 24px 0;
+        border-right: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        background: transparent;
+    }
+
+    .service-road__step:last-child {
+        border-bottom: 0;
+    }
+
+    .service-road__step::after {
+        left: 0;
+        right: auto;
+        top: 24px;
+        bottom: 24px;
+        width: 2px;
+        height: auto;
+        background: linear-gradient(180deg, #7f8792, transparent);
+    }
+
+    .service-road__step-index {
+        grid-row: auto;
+        font-size: 3rem;
+    }
+
+    .service-road__step-copy h3 {
+        font-size: 1.08rem;
+    }
+
+    .service-road__step-copy p {
+        font-size: 0.84rem;
+        line-height: 1.5;
+    }
+
+    .service-road__step:hover {
+        transform: translateX(4px);
+    }
+}
