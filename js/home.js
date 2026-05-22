@@ -332,18 +332,41 @@
     }
     function renderBenefits() {
         const container = qs("[data-home-benefits]");
+        const section = qs(".benefits-section");
+
         if (!container) return;
 
-        container.innerHTML = CONFIG.home.benefits.map((benefit, index) => `
-            <article class="benefit-card glass-card" data-aos="fade-up" data-aos-delay="${index * 70}">
-                <span class="icon-bubble">
-                    <i data-lucide="${benefit.icon}" aria-hidden="true"></i>
-                </span>
+        if (section) {
+            const image =
+                CONFIG.home?.growthSystem?.image ||
+                CONFIG.home?.hero?.image ||
+                "./assets/images/process-team.jpg";
 
-                <h3>${benefit.title}</h3>
-                <p>${benefit.text}</p>
-            </article>
-        `).join("");
+            section.style.setProperty("--benefits-image", `url("${image}")`);
+        }
+
+        container.innerHTML = `
+        <div class="benefits-horizontal">
+            ${CONFIG.home.benefits.map((benefit, index) => `
+                <article class="benefits-horizontal__item" data-aos="fade-up" data-aos-delay="${index * 80}">
+                    <div class="benefits-horizontal__top">
+                        <span class="benefits-horizontal__number">
+                            ${String(index + 1).padStart(2, "0")}
+                        </span>
+
+                        <span class="benefits-horizontal__icon">
+                            <i data-lucide="${benefit.icon}" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="benefits-horizontal__content">
+                        <h3>${benefit.title}</h3>
+                        <p>${benefit.text}</p>
+                    </div>
+                </article>
+            `).join("")}
+        </div>
+    `;
     }
 
     function renderProcess() {
