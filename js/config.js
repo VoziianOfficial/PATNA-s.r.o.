@@ -269,7 +269,7 @@ const asset = (path) => {
                 shortTitle: "Web Design",
                 href: "./web-design.html",
                 icon: "layout-dashboard",
-                image: "../assets/images/hero-web-design.jpg",
+                image: "./assets/images/hero-web-design.jpg",
                 heroImage: asset("assets/images/hero-4.jpg"),
                 kicker: "Responsive Websites & Landing Pages",
                 pageTitle: "Web Design Built for Trust, Clarity, and Conversion",
