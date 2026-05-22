@@ -433,10 +433,20 @@
             approach: [
                 { icon: "users", title: "Audience Research", text: "Understand who needs the offer and what messages can support trust." },
                 { icon: "network", title: "Channel Planning", text: "Choose marketing channels based on intent, budget, and conversion path." },
-                { icon: "target", title: "Conversion Tracking", text: "Review tracking quality so performance can be interpreted more clearly." },
-                { icon: "layout-template", title: "Landing Page Quality", text: "Improve page clarity, structure, forms, and calls-to-action." },
+                { icon: "target", title: "Conversion", text: "Review tracking quality so performance can be interpreted more clearly." },
+                { icon: "layout-template", title: "Landing Page ", text: "Improve page clarity, structure, forms, and calls-to-action." },
                 { icon: "search", title: "Search Visibility", text: "Support stronger organic and paid visibility around relevant search intent." },
-                { icon: "map", title: "Local Intent Strategy", text: "Help location-based businesses show stronger relevance in nearby searches." }
+                { icon: "map", title: "Local Strategy", text: "Help location-based businesses show stronger relevance in nearby searches." },
+                {
+                    icon: "scan-search",
+                    title: "Signal Review",
+                    text: "We look at campaign signals, visitor behavior, and tracking quality to understand where attention turns into useful action."
+                },
+                {
+                    icon: "refresh-cw",
+                    title: "Refinement Loop",
+                    text: "We use reporting, performance patterns, and conversion feedback to keep improving the marketing path over time."
+                }
             ],
             growthSystem: {
                 eyebrow: "Growth System",

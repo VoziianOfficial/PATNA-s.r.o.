@@ -634,18 +634,124 @@
         const container = qs("[data-home-approach]");
         if (!container) return;
 
-        container.innerHTML = CONFIG.home.approach.map((item, index) => `
-            <article class="approach-card" data-aos="fade-left" data-aos-delay="${index * 60}">
-                <span class="icon-bubble">
-                    <i data-lucide="${item.icon}" aria-hidden="true"></i>
-                </span>
+        const items = CONFIG.home.approach || [];
+
+        container.innerHTML = `
+        <div class="approach-rail" data-approach-rail>
+            <div class="approach-rail__track" role="tablist" aria-label="PATNA approach stages">
+                ${items.map((item, index) => `
+                    <button
+                        class="approach-rail__point ${index === 0 ? "is-active" : ""}"
+                        type="button"
+                        role="tab"
+                        aria-selected="${index === 0 ? "true" : "false"}"
+                        data-approach-point
+                        data-approach-index="${index}"
+                    >
+                        <span class="approach-rail__number">${String(index + 1).padStart(2, "0")}</span>
+
+                        <span class="approach-rail__icon">
+                            <i data-lucide="${item.icon}" aria-hidden="true"></i>
+                        </span>
+
+                        <span class="approach-rail__label">${item.title}</span>
+                    </button>
+                `).join("")}
+            </div>
+
+            <div class="approach-rail__detail" data-approach-detail>
+                <span class="approach-rail__detail-number" data-approach-detail-number>01</span>
+
+                <div class="approach-rail__detail-icon">
+                    <i data-lucide="${items[0]?.icon || "workflow"}" aria-hidden="true" data-approach-detail-icon></i>
+                </div>
 
                 <div>
-                    <h3>${item.title}</h3>
-                    <p>${item.text}</p>
+                    <h3 data-approach-detail-title>${items[0]?.title || "Connected strategy"}</h3>
+                    <p data-approach-detail-text>${items[0]?.text || ""}</p>
                 </div>
-            </article>
-        `).join("");
+            </div>
+        </div>
+    `;
+    }
+
+    function initApproachRail() {
+        const rail = qs("[data-approach-rail]");
+        if (!rail) return;
+
+        const points = qsa("[data-approach-point]", rail);
+        const detailNumber = qs("[data-approach-detail-number]", rail);
+        const detailTitle = qs("[data-approach-detail-title]", rail);
+        const detailText = qs("[data-approach-detail-text]", rail);
+        const detailIcon = qs("[data-approach-detail-icon]", rail);
+
+        const items = CONFIG.home.approach || [];
+        let activeIndex = 0;
+        let timer = null;
+
+        function setActive(index) {
+            const item = items[index];
+            if (!item) return;
+
+            activeIndex = index;
+
+            points.forEach((point, pointIndex) => {
+                const isActive = pointIndex === index;
+                point.classList.toggle("is-active", isActive);
+                point.setAttribute("aria-selected", isActive ? "true" : "false");
+            });
+
+            if (detailNumber) detailNumber.textContent = String(index + 1).padStart(2, "0");
+            if (detailTitle) detailTitle.textContent = item.title;
+            if (detailText) detailText.textContent = item.text;
+
+            if (detailIcon) {
+                detailIcon.setAttribute("data-lucide", item.icon || "workflow");
+            }
+
+            if (window.PATNA && typeof window.PATNA.refreshIcons === "function") {
+                window.PATNA.refreshIcons();
+            }
+        }
+
+        function startAuto() {
+            stopAuto();
+
+            timer = window.setInterval(() => {
+                const nextIndex = (activeIndex + 1) % points.length;
+                setActive(nextIndex);
+            }, 4200);
+        }
+
+        function stopAuto() {
+            if (timer) {
+                window.clearInterval(timer);
+                timer = null;
+            }
+        }
+
+        points.forEach((point) => {
+            const index = Number(point.dataset.approachIndex || 0);
+
+            point.addEventListener("click", () => {
+                setActive(index);
+                startAuto();
+            });
+
+            point.addEventListener("mouseenter", () => {
+                setActive(index);
+            });
+
+            point.addEventListener("focus", () => {
+                setActive(index);
+            });
+        });
+
+        rail.addEventListener("mouseenter", stopAuto);
+        rail.addEventListener("mouseleave", startAuto);
+
+        setActive(0);
+        startAuto();
     }
 
     function renderGrowthSystem() {
@@ -745,6 +851,7 @@
         renderProcess();
         initProcessSwitcher();
         renderApproach();
+        initApproachRail();
         renderGrowthSystem();
         renderFaq();
         renderContactPanel();
