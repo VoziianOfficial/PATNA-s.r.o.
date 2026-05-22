@@ -379,7 +379,7 @@
                 highlights: [
                     "Campaign planning and channel selection",
                     "Search visibility and conversion structure",
-                    "Professional reporting and optimization rhythm"
+                    "Professional reporting and optimization"
                 ]
             },
             benefits: [

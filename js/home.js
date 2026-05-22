@@ -274,32 +274,46 @@
 
         if (media) {
             media.innerHTML = `
-                <img src="${CONFIG.home.about.image}" alt="Marketing team reviewing campaign strategy" loading="lazy">
-                <div class="about-floating-card">
-                    <strong>${CONFIG.companyName}</strong>
-                    <p>${CONFIG.contact.address.full}</p>
+            <div class="about-photo-card">
+                <img src="${CONFIG.home.about.image}" alt="PATNA marketing strategy workspace" loading="lazy">
+
+                <div class="about-photo-card__label">
+                    <span>Growth System</span>
+                    <strong>Strategy · Visibility · Conversion</strong>
                 </div>
-            `;
+            </div>
+        `;
         }
 
         if (content) {
             content.innerHTML = `
-                <div class="section-heading">
+            <div class="about-editorial-card">
+                <div class="about-editorial-card__top">
                     <p class="eyebrow">${CONFIG.home.about.eyebrow}</p>
-                    <h2>${CONFIG.home.about.title}</h2>
+
+                    <h2>
+                        Marketing built
+                        <span>with direction.</span>
+                    </h2>
                 </div>
 
-                <div class="about-copy">
-                    ${CONFIG.home.about.paragraphs.map((paragraph) => `
+                <div class="about-editorial-card__copy">
+                    ${CONFIG.home.about.paragraphs.slice(0, 2).map((paragraph) => `
                         <p>${paragraph}</p>
                     `).join("")}
                 </div>
 
-                <ul class="about-highlights">
-                    ${CONFIG.home.about.highlights.map((highlight) => `
-                        <li>${highlight}</li>
-                    `).join("")}
-                </ul>
+             <ul class="about-highlights">
+    ${[
+                    ...CONFIG.home.about.highlights.slice(0, 3),
+                    "Clear reporting and refinement direction"
+                ].map((highlight, index) => `
+        <li>
+            <span>${String(index + 1).padStart(2, "0")}</span>
+            <strong>${highlight}</strong>
+        </li>
+    `).join("")}
+</ul>
 
                 <div class="about-contact-row">
                     <a href="${CONFIG.contact.emailHref}">
@@ -312,10 +326,10 @@
                         <span>${CONFIG.contact.address.full}</span>
                     </a>
                 </div>
-            `;
+            </div>
+        `;
         }
     }
-
     function renderBenefits() {
         const container = qs("[data-home-benefits]");
         if (!container) return;
