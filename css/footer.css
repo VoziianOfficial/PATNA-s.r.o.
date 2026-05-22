@@ -256,3 +256,217 @@
         width: 54px;
     }
 }
+
+/* FOOTER COLUMNS — CLEAN EDITORIAL LAYOUT */
+.site-footer__columns {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr 0.7fr;
+    gap: clamp(34px, 5vw, 78px);
+    align-items: start;
+    padding: 0;
+    border: 0 !important;
+    background: transparent !important;
+}
+
+.site-footer__column {
+    position: relative;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.site-footer__column h2 {
+    margin: 0 0 18px;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.site-footer__column ul {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-footer__column li {
+    margin: 0;
+    padding: 0;
+}
+
+.site-footer__column a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 7px 0;
+    color: rgba(216, 221, 229, 0.72);
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.35;
+    transition:
+        color var(--transition-base),
+        transform var(--transition-base);
+}
+
+.site-footer__column a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-blue), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-base);
+}
+
+.site-footer__column a:hover {
+    color: var(--color-white);
+    transform: translateX(4px);
+}
+
+.site-footer__column a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Services column slightly wider and more premium */
+.site-footer__column:first-child ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+}
+
+.site-footer__column:first-child a {
+    font-size: 0.9rem;
+}
+
+/* Subtle vertical rhythm instead of borders */
+.site-footer__column:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 4px;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg,
+            transparent,
+            rgba(255, 255, 255, 0.12),
+            transparent);
+    opacity: 0.7;
+}
+
+/* Tablet */
+@media (max-width: 980px) {
+    .site-footer__columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 34px 48px;
+    }
+
+    .site-footer__column:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .site-footer__column:not(:first-child)::before {
+        display: none;
+    }
+
+    .site-footer__column:first-child ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 620px) {
+    .site-footer__columns {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .site-footer__column:first-child {
+        grid-column: auto;
+    }
+
+    .site-footer__column:first-child ul {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer__column h2 {
+        margin-bottom: 12px;
+    }
+
+    .site-footer__column a {
+        padding: 6px 0;
+    }
+}
+.site-footer__columns,
+.site-footer__columns * {
+    box-shadow: none;
+}
+
+.site-footer__columns {
+    border: none;
+}
+
+/* FOOTER SERVICES ALIGNMENT FIX */
+.site-footer__columns {
+    grid-template-columns: minmax(260px, 1fr) minmax(180px, 0.72fr) minmax(150px, 0.58fr) !important;
+    gap: clamp(32px, 4vw, 56px) !important;
+}
+
+/* Services больше не делим на 2 колонки — так ровнее */
+.site-footer__column:first-child ul {
+    grid-template-columns: 1fr !important;
+    column-gap: 0 !important;
+}
+
+/* чтобы ссылки в Services не прыгали по ширине */
+.site-footer__column:first-child a {
+    max-width: 100%;
+    font-size: 0.92rem;
+}
+
+/* убираем слишком сильный сдвиг от вертикальных линий */
+.site-footer__column:not(:first-child)::before {
+    left: -18px !important;
+    opacity: 0.45 !important;
+}
+
+/* немного ровнее расстояние между ссылками */
+.site-footer__column ul {
+    gap: 2px !important;
+}
+
+.site-footer__column a {
+    padding: 6px 0 !important;
+}
+
+/* Tablet */
+@media (max-width: 980px) {
+    .site-footer__columns {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 34px !important;
+    }
+
+    .site-footer__column:first-child {
+        grid-column: auto !important;
+    }
+
+    .site-footer__column:not(:first-child)::before {
+        display: none !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 620px) {
+    .site-footer__columns {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+    }
+}
