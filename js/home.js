@@ -220,6 +220,10 @@
         const duration = 1600;
 
         function animateCounter(counter) {
+            if (counter.dataset.animated === "true") return;
+
+            counter.dataset.animated = "true";
+
             const target = Number(counter.dataset.count || 0);
             const suffix = counter.dataset.suffix || "";
             const startTime = performance.now();
@@ -244,20 +248,11 @@
             requestAnimationFrame(update);
         }
 
-        function startCounters() {
-            counters.forEach((counter) => {
-                if (counter.dataset.animated === "true") return;
-
-                counter.dataset.animated = "true";
-                animateCounter(counter);
-            });
-        }
-
         const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
 
-                startCounters();
+                counters.forEach(animateCounter);
                 obs.unobserve(entry.target);
             });
         }, {
@@ -266,6 +261,58 @@
         });
 
         observer.observe(section);
+    }
+
+    function initBenefitsDashboard() {
+        const dashboard = qs("[data-benefits-dashboard]");
+        if (!dashboard) return;
+
+        const counters = qsa("[data-dashboard-count]", dashboard);
+
+        function animateNumber(element) {
+            if (element.dataset.animated === "true") return;
+
+            element.dataset.animated = "true";
+
+            const target = Number(element.dataset.target || 0);
+            const decimals = Number(element.dataset.decimals || 0);
+            const prefix = element.dataset.prefix || "";
+            const suffix = element.dataset.suffix || "";
+            const duration = 1400;
+            const startTime = performance.now();
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const value = target * eased;
+
+                element.textContent = `${prefix}${value.toFixed(decimals)}${suffix}`;
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    element.textContent = `${prefix}${target.toFixed(decimals)}${suffix}`;
+                }
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+
+                dashboard.classList.add("is-animated");
+                counters.forEach(animateNumber);
+
+                obs.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.35
+        });
+
+        observer.observe(dashboard);
     }
 
     function renderAboutSection() {
@@ -331,10 +378,10 @@
         }
     }
     function renderBenefits() {
-        const container = qs("[data-home-benefits]");
+        const shell = qs("[data-benefits-shell]");
         const section = qs(".benefits-section");
 
-        if (!container) return;
+        if (!shell) return;
 
         if (section) {
             const image =
@@ -345,7 +392,67 @@
             section.style.setProperty("--benefits-image", `url("${image}")`);
         }
 
-        container.innerHTML = `
+        shell.innerHTML = `
+        <div class="benefits-intro">
+            <div class="section-heading">
+                <p class="eyebrow">Why Choose PATNA</p>
+                <h2 id="benefits-title">Built for realistic growth, not inflated marketing promises.</h2>
+                <p>
+                    Every marketing decision should connect to the business model, audience behavior, tracking
+                    quality, and the path a visitor takes before becoming a lead or customer.
+                </p>
+            </div>
+
+            <div class="benefits-dashboard" data-benefits-dashboard aria-hidden="true">
+                <div class="benefits-dashboard__top">
+                    <div>
+                        <span>Live Performance View</span>
+                        <small>Campaign signal overview</small>
+                    </div>
+
+                    <strong>
+                        <span data-dashboard-count data-target="42" data-prefix="+" data-suffix="%">+0%</span>
+                    </strong>
+                </div>
+
+                <div class="benefits-dashboard__bars">
+                    <span style="--h: 42%; --bar-color: #2f80ff"></span>
+                    <span style="--h: 64%; --bar-color: #f2b84b"></span>
+                    <span style="--h: 53%; --bar-color: #31c48d"></span>
+                    <span style="--h: 78%; --bar-color: #8b7cff"></span>
+                    <span style="--h: 69%; --bar-color: #f97373"></span>
+                    <span style="--h: 88%; --bar-color: #78b7ff"></span>
+                </div>
+
+                <div class="benefits-dashboard__rows">
+                    <div class="benefits-dashboard__row benefits-dashboard__row--blue" style="--w: 84%">
+                        <span>Traffic quality</span>
+                        <i></i>
+                        <strong>
+                            <span data-dashboard-count data-target="84" data-suffix="%">0%</span>
+                        </strong>
+                    </div>
+
+                    <div class="benefits-dashboard__row benefits-dashboard__row--yellow" style="--w: 68%">
+                        <span>Lead intent</span>
+                        <i></i>
+                        <strong>
+                            <span data-dashboard-count data-target="68" data-suffix="%">0%</span>
+                        </strong>
+                    </div>
+
+                    <div class="benefits-dashboard__row benefits-dashboard__row--green" style="--w: 76%">
+                        <span>Conversion clarity</span>
+                        <i></i>
+                        <strong>
+                            <span data-dashboard-count data-target="76" data-suffix="%">0%</span>
+                        </strong>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
         <div class="benefits-horizontal">
             ${CONFIG.home.benefits.map((benefit, index) => `
                 <article class="benefits-horizontal__item" data-aos="fade-up" data-aos-delay="${index * 80}">
@@ -499,6 +606,7 @@
         initCountUpStats();
         renderAboutSection();
         renderBenefits();
+        initBenefitsDashboard();
         renderProcess();
         renderApproach();
         renderGrowthSystem();
