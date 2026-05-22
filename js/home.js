@@ -557,14 +557,9 @@
             CONFIG.home?.about?.image ||
             "./assets/images/process-team.jpg";
 
-        let activeIndex = 0;
-        let timer = null;
-
         function setActive(index) {
             const step = steps[index];
             if (!step) return;
-
-            activeIndex = index;
 
             tabs.forEach((tab, tabIndex) => {
                 const isActive = tabIndex === index;
@@ -594,40 +589,41 @@
             }
         }
 
-        function startAutoSwitch() {
-            stopAutoSwitch();
-
-            timer = window.setInterval(() => {
-                const nextIndex = (activeIndex + 1) % tabs.length;
-                setActive(nextIndex);
-            }, 4200);
-        }
-
-        function stopAutoSwitch() {
-            if (timer) {
-                window.clearInterval(timer);
-                timer = null;
-            }
+        function clearActive() {
+            tabs.forEach((tab) => {
+                tab.classList.remove("is-active");
+                tab.setAttribute("aria-selected", "false");
+            });
         }
 
         tabs.forEach((tab) => {
             const index = Number(tab.dataset.processIndex || 0);
 
-            tab.addEventListener("click", () => {
+            tab.addEventListener("click", (event) => {
+                event.stopPropagation();
                 setActive(index);
-                startAutoSwitch();
             });
 
             tab.addEventListener("mouseenter", () => {
                 setActive(index);
             });
+
+            tab.addEventListener("focus", () => {
+                setActive(index);
+            });
         });
 
-        switcher.addEventListener("mouseenter", stopAutoSwitch);
-        switcher.addEventListener("mouseleave", startAutoSwitch);
+        switcher.addEventListener("click", (event) => {
+            event.stopPropagation();
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!switcher.contains(event.target)) {
+                clearActive();
+            }
+        });
 
         setActive(0);
-        startAutoSwitch();
     }
 
     function renderApproach() {
