@@ -4797,3 +4797,617 @@
     color: #0f1724 !important;
     background: var(--icon-bg-light-hover) !important;
 }
+
+/* TRUST STRIP — MOBILE/TABLET 2x2 PREMIUM GRID */
+@media (max-width: 900px) {
+    .trust-strip {
+        padding: 18px 0 !important;
+        background: #f4f6f8 !important;
+    }
+
+    .trust-strip .container-wide {
+        width: min(100% - 24px, var(--container-wide)) !important;
+        margin-inline: auto !important;
+    }
+
+    .trust-strip__grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        overflow: visible !important;
+        border: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        animation: none !important;
+        transform: none !important;
+    }
+
+    .trust-item.trust-item--counter {
+        min-height: 94px !important;
+        display: grid !important;
+        grid-template-columns: 34px 1fr;
+        align-items: center !important;
+        justify-content: initial !important;
+        gap: 10px !important;
+        padding: 14px !important;
+        border: 1px solid rgba(15, 18, 25, 0.08) !important;
+        background:
+            radial-gradient(circle at 100% 0%, rgba(31, 95, 255, 0.07), transparent 62%),
+            linear-gradient(180deg, #ffffff, #f7f8fb) !important;
+        box-shadow:
+            0 10px 26px rgba(13, 20, 33, 0.055),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .trust-item.trust-item--counter::before {
+        display: none !important;
+    }
+
+    .trust-item.trust-item--counter:hover {
+        background:
+            radial-gradient(circle at 100% 0%, rgba(31, 95, 255, 0.1), transparent 62%),
+            #ffffff !important;
+    }
+
+    .trust-item .trust-item__icon {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .trust-item .trust-item__icon svg {
+        width: 22px !important;
+        height: 22px !important;
+        filter: none !important;
+    }
+
+    .trust-item .trust-item__content strong {
+        margin: 0 0 3px !important;
+        font-size: clamp(1.38rem, 6vw, 1.75rem) !important;
+        line-height: 0.95 !important;
+    }
+
+    .trust-item .trust-item__content p {
+        margin: 0 !important;
+        color: #5c6470 !important;
+        font-size: 0.72rem !important;
+        font-weight: 800 !important;
+        line-height: 1.25 !important;
+    }
+
+    .trust-item.trust-item--counter:nth-child(2),
+    .trust-item.trust-item--counter:nth-child(-n + 2),
+    .trust-item.trust-item--counter:last-child {
+        border: 1px solid rgba(15, 18, 25, 0.08) !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .trust-strip .container-wide {
+        width: min(100% - 18px, var(--container-wide)) !important;
+    }
+
+    .trust-strip__grid {
+        gap: 7px !important;
+    }
+
+    .trust-item.trust-item--counter {
+        min-height: 84px !important;
+        grid-template-columns: 28px 1fr;
+        gap: 8px !important;
+        padding: 11px !important;
+    }
+
+    .trust-item .trust-item__icon {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .trust-item .trust-item__icon svg {
+        width: 19px !important;
+        height: 19px !important;
+    }
+
+    .trust-item .trust-item__content strong {
+        font-size: 1.24rem !important;
+    }
+
+    .trust-item .trust-item__content p {
+        font-size: 0.66rem !important;
+    }
+}
+
+/* HERO — TABLET / MOBILE CENTERED CONTENT */
+@media (max-width: 1024px) {
+    .home-hero {
+        align-items: center !important;
+        text-align: center;
+    }
+
+    .home-hero .container-wide {
+        width: min(100% - 40px, var(--container-wide));
+    }
+
+    .home-hero__inner,
+    .home-hero__content {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-inline: auto;
+    }
+
+    .home-hero .hero-title {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-inline: auto !important;
+        text-align: center;
+    }
+
+    .home-hero .hero-text {
+        max-width: 760px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center;
+    }
+
+    .home-hero .btn-row {
+        justify-content: center !important;
+    }
+
+    .home-hero__badges {
+        display: flex;
+        justify-content: center;
+    }
+
+    .home-hero .badge-list {
+        justify-content: center;
+    }
+}
+
+/* TABLET — title uses almost full section width */
+@media (min-width: 761px) and (max-width: 1024px) {
+    .home-hero {
+        padding: 150px 0 78px !important;
+    }
+
+    .home-hero .hero-title {
+        font-size: clamp(4.1rem, 8.2vw, 6.2rem) !important;
+        line-height: 0.98 !important;
+        letter-spacing: -0.065em !important;
+    }
+
+    .home-hero .hero-text {
+        font-size: 1.05rem;
+    }
+}
+
+/* MOBILE — compact and centered */
+@media (max-width: 760px) {
+    .home-hero {
+        align-items: center !important;
+        padding: 136px 0 64px !important;
+    }
+
+    .home-hero .container-wide {
+        width: min(100% - 26px, var(--container-wide));
+    }
+
+    .home-hero .hero-title {
+        font-size: clamp(2.65rem, 12vw, 4.15rem) !important;
+        line-height: 1.02 !important;
+        text-align: center;
+    }
+
+    .home-hero .hero-title span {
+        text-align: center;
+    }
+
+    .home-hero .hero-text {
+        max-width: 100% !important;
+        text-align: center;
+    }
+
+    .home-hero .btn-row {
+        justify-content: center !important;
+    }
+}
+
+/* SMALL MOBILE — buttons centered but full width */
+@media (max-width: 480px) {
+    .home-hero .btn-row {
+        align-items: stretch !important;
+    }
+
+    .home-hero .btn-row .btn {
+        width: 100%;
+    }
+
+    .home-hero .badge-list {
+        width: 100%;
+    }
+
+    .home-hero .badge-list li {
+        justify-content: center !important;
+        text-align: center;
+    }
+}
+
+/* HERO — HIDE BADGES ON MOBILE */
+@media (max-width: 760px) {
+
+    .home-hero__badges,
+    .home-hero .badge-list {
+        display: none !important;
+    }
+}
+
+
+/* APPROACH RAIL — TABLET / MOBILE NUMBER BUTTONS ONLY */
+
+/* Tablet: 4 buttons per row, no text */
+@media (min-width: 641px) and (max-width: 980px) {
+    .approach-card-list {
+        margin-top: 42px !important;
+    }
+
+    .approach-rail__track {
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        padding-top: 0 !important;
+    }
+
+    .approach-rail__track::before {
+        display: none !important;
+    }
+
+    .approach-rail__point {
+        width: auto !important;
+        min-height: 68px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+        border: 1px solid rgba(255, 255, 255, 0.16) !important;
+        background: rgba(255, 255, 255, 0.055) !important;
+        text-align: center !important;
+        box-shadow: none !important;
+    }
+
+    .approach-rail__icon,
+    .approach-rail__label {
+        display: none !important;
+    }
+
+    .approach-rail__number {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        color: rgba(244, 246, 248, 0.72) !important;
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        transform: none !important;
+    }
+
+    .approach-rail__point:hover,
+    .approach-rail__point.is-active {
+        border-color: rgba(216, 222, 231, 0.58) !important;
+        background:
+            linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06)) !important;
+    }
+
+    .approach-rail__point:hover .approach-rail__number,
+    .approach-rail__point.is-active .approach-rail__number {
+        color: #ffffff !important;
+        transform: none !important;
+    }
+
+    .approach-rail__detail {
+        margin-top: 28px !important;
+    }
+}
+
+/* Mobile: 2 buttons per row, no text */
+@media (max-width: 640px) {
+    .approach-card-list {
+        margin-top: 34px !important;
+    }
+
+    .approach-rail__track {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        padding-top: 0 !important;
+    }
+
+    .approach-rail__track::before {
+        display: none !important;
+    }
+
+    .approach-rail__point {
+        width: auto !important;
+        min-height: 58px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        grid-template-columns: none !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        background: rgba(255, 255, 255, 0.055) !important;
+        text-align: center !important;
+    }
+
+    .approach-rail__icon,
+    .approach-rail__label {
+        display: none !important;
+    }
+
+    .approach-rail__number {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        color: rgba(244, 246, 248, 0.72) !important;
+        font-family: var(--font-heading);
+        font-size: 0.92rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        transform: none !important;
+    }
+
+    .approach-rail__point:hover,
+    .approach-rail__point.is-active {
+        border-color: rgba(216, 222, 231, 0.56) !important;
+        background:
+            linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06)) !important;
+    }
+
+    .approach-rail__point:hover .approach-rail__number,
+    .approach-rail__point.is-active .approach-rail__number {
+        color: #ffffff !important;
+        transform: none !important;
+    }
+
+    .approach-rail__detail {
+        margin-top: 24px !important;
+    }
+}
+
+/* GROWTH SYSTEM — REDUCE TOP PADDING ONLY */
+.growth-system {
+    padding-top: 54px !important;
+}
+
+@media (max-width: 760px) {
+    .growth-system {
+        padding-top: 38px !important;
+    }
+}
+
+/* APPROACH RAIL — NUMBER BUTTONS ON DESKTOP / TABLET / MOBILE */
+.approach-card-list {
+    margin-top: 42px !important;
+}
+
+.approach-rail__track {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    padding-top: 0 !important;
+}
+
+.approach-rail__track::before {
+    display: none !important;
+}
+
+/* кнопки только с нумерацией */
+.approach-rail__point {
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 68px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    grid-template-columns: none !important;
+    grid-column: auto !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    background: rgba(255, 255, 255, 0.055) !important;
+    text-align: center !important;
+    box-shadow: none !important;
+}
+
+/* скрываем иконку и текст в самих кнопках */
+.approach-rail__point .approach-rail__icon,
+.approach-rail__point .approach-rail__label {
+    display: none !important;
+}
+
+.approach-rail__number {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: rgba(244, 246, 248, 0.72) !important;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    transform: none !important;
+}
+
+.approach-rail__point:hover,
+.approach-rail__point.is-active {
+    border-color: rgba(216, 222, 231, 0.58) !important;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06)) !important;
+}
+
+.approach-rail__point:hover .approach-rail__number,
+.approach-rail__point.is-active .approach-rail__number {
+    color: #ffffff !important;
+    transform: none !important;
+}
+
+/* если всего 6 пунктов — 5 и 6 красиво по центру второго ряда */
+@media (min-width: 641px) {
+    .approach-rail__point:nth-child(5) {
+        grid-column: 2 !important;
+    }
+
+    .approach-rail__point:nth-child(6) {
+        grid-column: 3 !important;
+    }
+}
+
+/* detail снизу ближе к кнопкам */
+.approach-rail__detail {
+    margin-top: 28px !important;
+}
+
+/* mobile: 2 кнопки в ряд */
+@media (max-width: 640px) {
+    .approach-card-list {
+        margin-top: 34px !important;
+    }
+
+    .approach-rail__track {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .approach-rail__point {
+        min-height: 58px !important;
+        grid-column: auto !important;
+    }
+
+    .approach-rail__point:nth-child(5),
+    .approach-rail__point:nth-child(6) {
+        grid-column: auto !important;
+    }
+
+    .approach-rail__number {
+        font-size: 0.92rem;
+    }
+
+    .approach-rail__detail {
+        margin-top: 24px !important;
+    }
+}
+
+/* APPROACH RAIL — FINAL NUMBER GRID FIX */
+.approach-card-list {
+    margin-top: 42px !important;
+    display: block !important;
+}
+
+.approach-rail__track {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    padding-top: 0 !important;
+    justify-content: stretch !important;
+    align-items: stretch !important;
+}
+
+.approach-rail__track::before {
+    display: none !important;
+    content: none !important;
+}
+
+.approach-rail__point,
+.approach-rail__point:nth-child(5),
+.approach-rail__point:nth-child(6),
+.approach-rail__point:nth-child(n + 5) {
+    width: auto !important;
+    min-width: 0 !important;
+    flex: initial !important;
+    flex-basis: auto !important;
+    grid-column: auto !important;
+    min-height: 68px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+    gap: 0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    background: rgba(255, 255, 255, 0.055) !important;
+    text-align: center !important;
+    box-shadow: none !important;
+}
+
+/* убираем текст и иконки внутри кнопок */
+.approach-rail__icon,
+.approach-rail__label {
+    display: none !important;
+}
+
+.approach-rail__number {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    color: rgba(244, 246, 248, 0.72) !important;
+    font-family: var(--font-heading);
+    font-size: 1rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.14em !important;
+    transform: none !important;
+}
+
+.approach-rail__point:hover,
+.approach-rail__point.is-active {
+    border-color: rgba(216, 222, 231, 0.58) !important;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06)) !important;
+}
+
+.approach-rail__point:hover .approach-rail__number,
+.approach-rail__point.is-active .approach-rail__number {
+    color: #ffffff !important;
+}
+
+.approach-rail__detail {
+    margin-top: 28px !important;
+}
+
+/* MOBILE — 2 кнопки в ряд */
+@media (max-width: 640px) {
+    .approach-card-list {
+        margin-top: 34px !important;
+    }
+
+    .approach-rail__track {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .approach-rail__point,
+    .approach-rail__point:nth-child(5),
+    .approach-rail__point:nth-child(6),
+    .approach-rail__point:nth-child(n + 5) {
+        grid-column: auto !important;
+        width: auto !important;
+        min-height: 58px !important;
+        flex: initial !important;
+        flex-basis: auto !important;
+    }
+
+    .approach-rail__number {
+        font-size: 0.92rem !important;
+    }
+
+    .approach-rail__detail {
+        margin-top: 24px !important;
+    }
+}
