@@ -17,6 +17,15 @@
     --color-blue-soft: #e8edff;
     --color-blue-glow: rgba(31, 95, 255, 0.42);
 
+    /* Icon palette */
+        --icon-bg-light: linear-gradient(135deg, #f7f8fb 0%, #d9dee7 48%, #aeb7c4 100%);
+        --icon-bg-light-hover: linear-gradient(135deg, #ffffff 0%, #e7ebf2 42%, #b7c4d6 100%);
+        --icon-color-light: #18202c;
+        --icon-border-light: rgba(255, 255, 255, 0.7);
+        --icon-shadow-light: 0 16px 34px rgba(13, 20, 33, 0.18);
+        --number-color-soft: rgba(244, 246, 248, 0.62);
+        --number-color-light: #d9dee7;
+
     --color-border: rgba(255, 255, 255, 0.12);
     --color-border-strong: rgba(255, 255, 255, 0.22);
     --color-border-dark: rgba(15, 18, 25, 0.12);
@@ -911,3 +920,4 @@ main {
         transition-duration: 0.001ms !important;
     }
 }
+
