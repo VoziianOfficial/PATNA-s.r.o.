@@ -6,6 +6,17 @@
   CTA labels, footer text, and reusable content from this file.
 */
 
+const CONFIG_SCRIPT_URL = document.currentScript
+    ? new URL(document.currentScript.src)
+    : new URL("./js/config.js", window.location.href);
+
+const SITE_ROOT_URL = new URL("../", CONFIG_SCRIPT_URL);
+
+const asset = (path) => {
+    const cleanPath = path.replace(/^\.?\//, "");
+    return new URL(cleanPath, SITE_ROOT_URL).href;
+};
+
 (function () {
     const addressText = "Kukučínova 22, 974 01 Banská Bystrica, Slovakia";
     const mapQuery = encodeURIComponent(addressText);
@@ -34,18 +45,18 @@
         },
 
         assets: {
-            faviconSvg: "./assets/icons/favicon.svg",
+            faviconSvg: asset("assets/icons/favicon.svg"),
             images: {
-                heroMain: "../assets/images/hero-main.jpg",
-                heroGoogleAds: "../assets/images/hero-google-ads.jpg",
-                heroSeo: "../assets/images/hero-seo.jpg",
-                heroSocialMedia: "../assets/images/hero-social-media.jpg",
-                heroWebDesign: "../assets/images/hero-web-design.jpg",
-                heroConversion: "../assets/images/hero-conversion.jpg",
-                heroLocalSeo: "../assets/images/hero-local-seo.jpg",
-                aboutAgency: "../assets/images/about-agency.jpg",
-                processTeam: "../assets/images/process-team.jpg",
-                ctaBg: "../assets/images/cta-bg.jpg"
+                heroMain: asset("assets/images/hero-main.jpg"),
+                heroGoogleAds: asset("assets/images/hero-google-ads.jpg"),
+                heroSeo: asset("assets/images/hero-seo.jpg"),
+                heroSocialMedia: asset("assets/images/hero-social-media.jpg"),
+                heroWebDesign: asset("assets/images/hero-web-design.jpg"),
+                heroConversion: asset("assets/images/hero-conversion.jpg"),
+                heroLocalSeo: asset("assets/images/hero-local-seo.jpg"),
+                aboutAgency: asset("assets/images/about-agency.jpg"),
+                processTeam: asset("assets/images/process-team.jpg"),
+                ctaBg: asset("assets/images/cta-bg.jpg")
             }
         },
 
@@ -267,8 +278,8 @@
                 shortTitle: "Web Design",
                 href: "./web-design.html",
                 icon: "layout-dashboard",
-                image: "./assets/images/hero-web-design.jpg",
-                heroImage: "./assets/images/hero-web-design.jpg",
+                image: "../assets/images/hero-web-design.jpg",
+                heroImage: "../assets/images/hero-web-design.jpg",
                 kicker: "Responsive Websites & Landing Pages",
                 pageTitle: "Web Design Built for Trust, Clarity, and Conversion",
                 summary: "Modern responsive websites, landing pages, UI/UX clarity, conversion paths, form usability, and performance-aware structure.",
