@@ -52,36 +52,145 @@
         logo: {
             label: "PATNA Growth Marketing Agency",
             /*
-              Abstract Growth Stream Emblem.
+              Marketing Prism Mark.
               Not letter-based, not placed inside a circle or square.
-              main.js will inject this SVG into header/footer logo slots.
+              main.js injects this SVG into header/footer/mobile logo slots.
             */
             svgMarkup: `
-                <svg class="logo-mark" viewBox="0 0 96 76" role="img" aria-label="PATNA abstract growth stream emblem" xmlns="http://www.w3.org/2000/svg">
+                <svg class="logo-mark" viewBox="3 2 154 116" role="img" aria-label="PATNA marketing prism mark" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                        <linearGradient id="patnaStreamA" x1="8" y1="62" x2="86" y2="12" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#F4F6F8"/>
-                            <stop offset="0.42" stop-color="#8FA6FF"/>
-                            <stop offset="1" stop-color="#1F5FFF"/>
+                        <linearGradient id="patnaHornMetal" x1="20" y1="20" x2="125" y2="92" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#ffffff"/>
+                            <stop offset="0.18" stop-color="#d7dce5"/>
+                            <stop offset="0.45" stop-color="#535b68"/>
+                            <stop offset="0.72" stop-color="#171a20"/>
+                            <stop offset="1" stop-color="#07090d"/>
                         </linearGradient>
-                        <linearGradient id="patnaStreamB" x1="10" y1="20" x2="91" y2="66" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#FFFFFF"/>
-                            <stop offset="0.48" stop-color="#D8DDE5"/>
-                            <stop offset="1" stop-color="#123BB8"/>
+
+                        <linearGradient id="patnaDarkBody" x1="18" y1="16" x2="106" y2="102" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#333946"/>
+                            <stop offset="0.42" stop-color="#151922"/>
+                            <stop offset="1" stop-color="#07090d"/>
                         </linearGradient>
-                        <linearGradient id="patnaStreamC" x1="18" y1="70" x2="78" y2="6" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#20242C"/>
-                            <stop offset="0.45" stop-color="#5E7DFF"/>
-                            <stop offset="1" stop-color="#FFFFFF"/>
+
+                        <linearGradient id="patnaBlueGlow" x1="70" y1="20" x2="132" y2="80" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#7ea3ff"/>
+                            <stop offset="0.35" stop-color="#245fff"/>
+                            <stop offset="1" stop-color="#0a236d"/>
                         </linearGradient>
-                        <filter id="patnaGlow" x="-20%" y="-30%" width="140%" height="160%">
-                            <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#1F5FFF" flood-opacity="0.32"/>
+
+                        <linearGradient id="patnaHandle" x1="34" y1="64" x2="70" y2="110" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#e7ebf2"/>
+                            <stop offset="0.25" stop-color="#7b8492"/>
+                            <stop offset="0.68" stop-color="#20242c"/>
+                            <stop offset="1" stop-color="#080a0e"/>
+                        </linearGradient>
+
+                        <filter id="patnaGlow" x="-60%" y="-60%" width="220%" height="220%">
+                            <feGaussianBlur stdDeviation="5" result="blur"/>
+                            <feColorMatrix
+                                in="blur"
+                                type="matrix"
+                                values="0 0 0 0 0.12
+                                        0 0 0 0 0.36
+                                        0 0 0 0 1
+                                        0 0 0 0.82 0"
+                                result="blueGlow"
+                            />
+                            <feMerge>
+                                <feMergeNode in="blueGlow"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
                         </filter>
                     </defs>
-                    <path filter="url(#patnaGlow)" d="M10.7 53.9C23.4 41.1 35.1 35.2 47.8 36.2C60.8 37.2 68.9 30.6 83.7 14.3C87.4 10.2 94.1 14.6 91.1 19.4C79.1 38.4 63.9 51.4 45.2 49.5C33.8 48.4 25.2 53.9 16.7 62.2C11.9 66.9 6.1 58.6 10.7 53.9Z" fill="url(#patnaStreamA)"/>
-                    <path d="M7.8 22.9C19.7 17.1 31.4 16.8 42.9 22.2C53.4 27.1 64.6 26.7 82.8 15.4C88.3 12 92.9 19.9 87.5 23.7C68.6 37.1 51.5 40.4 36.1 31.6C27.7 26.8 19.8 27.2 12.3 30.7C6.4 33.4 1.9 25.8 7.8 22.9Z" fill="url(#patnaStreamB)" opacity="0.92"/>
-                    <path d="M20.2 68.5C31.1 56.6 42.9 51.2 55.7 52.3C66.7 53.2 75.5 47.3 85.8 36.9C90.3 32.3 96.3 39.2 91.8 44.2C79.2 58.4 65.9 66.4 51.2 64.3C42.5 63.1 34.4 67.1 26.9 74.1C22.2 78.4 15.7 73.4 20.2 68.5Z" fill="url(#patnaStreamC)" opacity="0.9"/>
-                    <path d="M35.7 9.7C44.7 10.1 52.2 13.1 58.2 18.7" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" opacity="0.72"/>
+                    <g class="brand-logo__mark">
+                        <path
+                            class="brand-logo__light"
+                            d="M104 39 L142 24 L142 90 L104 74 Z"
+                            fill="url(#patnaBlueGlow)"
+                            opacity="0.72"
+                            filter="url(#patnaGlow)"
+                        />
+
+                        <path
+                            d="M44 40 C60 35 78 29 106 17 C111 15 116 18 116 24 L116 88 C116 94 111 97 106 95 C78 83 60 77 44 72 Z"
+                            fill="url(#patnaHornMetal)"
+                        />
+
+                        <path
+                            d="M48 45 C63 41 78 36 102 26 C105 25 108 27 108 30 L108 82 C108 85 105 87 102 86 C78 76 63 71 48 67 Z"
+                            fill="url(#patnaDarkBody)"
+                            opacity="0.86"
+                        />
+
+                        <ellipse
+                            cx="106"
+                            cy="56"
+                            rx="13"
+                            ry="31"
+                            fill="url(#patnaBlueGlow)"
+                            opacity="0.95"
+                            filter="url(#patnaGlow)"
+                        />
+
+                        <ellipse
+                            cx="102"
+                            cy="56"
+                            rx="7"
+                            ry="22"
+                            fill="#071126"
+                            opacity="0.86"
+                        />
+
+                        <path
+                            d="M28 43 H51 C56 43 60 47 60 52 V61 C60 66 56 70 51 70 H28 C22 70 18 66 18 60 V53 C18 47 22 43 28 43 Z"
+                            fill="url(#patnaDarkBody)"
+                        />
+
+                        <path
+                            d="M42 66 H64 L58 106 C57 111 53 114 48 114 H38 C33 114 30 109 32 104 Z"
+                            fill="url(#patnaHandle)"
+                        />
+
+                        <path
+                            d="M37 73 H53"
+                            fill="none"
+                            stroke="#ffffff"
+                            stroke-opacity="0.28"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M33 49 H54"
+                            fill="none"
+                            stroke="#ffffff"
+                            stroke-opacity="0.38"
+                            stroke-width="2.2"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M89 31 C96 28 101 26 106 24"
+                            fill="none"
+                            stroke="#ffffff"
+                            stroke-opacity="0.42"
+                            stroke-width="2.4"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M88 80 C96 83 101 85 106 87"
+                            fill="none"
+                            stroke="#ffffff"
+                            stroke-opacity="0.18"
+                            stroke-width="2.4"
+                            stroke-linecap="round"
+                        />
+
+                        <circle cx="113" cy="37" r="2.2" fill="#ffffff" opacity="0.86"/>
+                        <circle cx="119" cy="76" r="1.8" fill="#7ea3ff" opacity="0.85"/>
+                    </g>
                 </svg>
             `
         },

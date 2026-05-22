@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="PATNA favicon">
+  <defs>
+    <linearGradient id="mprHornMetal" x1="20" y1="20" x2="125" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.18" stop-color="#d7dce5"/>
+      <stop offset="0.45" stop-color="#535b68"/>
+      <stop offset="0.72" stop-color="#171a20"/>
+      <stop offset="1" stop-color="#07090d"/>
+    </linearGradient>
+
+    <linearGradient id="mprDarkBody" x1="18" y1="16" x2="106" y2="102" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#333946"/>
+      <stop offset="0.42" stop-color="#151922"/>
+      <stop offset="1" stop-color="#07090d"/>
+    </linearGradient>
+
+    <linearGradient id="mprBlueGlow" x1="70" y1="20" x2="132" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7ea3ff"/>
+      <stop offset="0.35" stop-color="#245fff"/>
+      <stop offset="1" stop-color="#0a236d"/>
+    </linearGradient>
+
+    <linearGradient id="mprHandle" x1="34" y1="64" x2="70" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e7ebf2"/>
+      <stop offset="0.25" stop-color="#7b8492"/>
+      <stop offset="0.68" stop-color="#20242c"/>
+      <stop offset="1" stop-color="#080a0e"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(-9 12) scale(0.92)">
+    <path
+      d="M104 39 L142 24 L142 90 L104 74 Z"
+      fill="url(#mprBlueGlow)"
+      opacity="0.78"
+    />
+
+    <path
+      d="M44 40 C60 35 78 29 106 17 C111 15 116 18 116 24 L116 88 C116 94 111 97 106 95 C78 83 60 77 44 72 Z"
+      fill="url(#mprHornMetal)"
+    />
+
+    <path
+      d="M48 45 C63 41 78 36 102 26 C105 25 108 27 108 30 L108 82 C108 85 105 87 102 86 C78 76 63 71 48 67 Z"
+      fill="url(#mprDarkBody)"
+      opacity="0.88"
+    />
+
+    <ellipse
+      cx="106"
+      cy="56"
+      rx="13"
+      ry="31"
+      fill="url(#mprBlueGlow)"
+      opacity="0.98"
+    />
+
+    <ellipse
+      cx="102"
+      cy="56"
+      rx="7"
+      ry="22"
+      fill="#071126"
+      opacity="0.86"
+    />
+
+    <path
+      d="M28 43 H51 C56 43 60 47 60 52 V61 C60 66 56 70 51 70 H28 C22 70 18 66 18 60 V53 C18 47 22 43 28 43 Z"
+      fill="url(#mprDarkBody)"
+    />
+
+    <path
+      d="M42 66 H64 L58 106 C57 111 53 114 48 114 H38 C33 114 30 109 32 104 Z"
+      fill="url(#mprHandle)"
+    />
+
+    <path
+      d="M37 73 H53"
+      fill="none"
+      stroke="#ffffff"
+      stroke-opacity="0.26"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+
+    <path
+      d="M33 49 H54"
+      fill="none"
+      stroke="#ffffff"
+      stroke-opacity="0.36"
+      stroke-width="2.2"
+      stroke-linecap="round"
+    />
+
+    <path
+      d="M89 31 C96 28 101 26 106 24"
+      fill="none"
+      stroke="#ffffff"
+      stroke-opacity="0.38"
+      stroke-width="2.4"
+      stroke-linecap="round"
+    />
+
+    <path
+      d="M88 80 C96 83 101 85 106 87"
+      fill="none"
+      stroke="#ffffff"
+      stroke-opacity="0.16"
+      stroke-width="2.4"
+      stroke-linecap="round"
+    />
+
+    <circle cx="113" cy="37" r="2.2" fill="#ffffff" opacity="0.86"/>
+    <circle cx="119" cy="76" r="1.8" fill="#7ea3ff" opacity="0.85"/>
+  </g>
+</svg>

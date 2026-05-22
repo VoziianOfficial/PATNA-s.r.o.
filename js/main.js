@@ -104,11 +104,40 @@
         document.head.appendChild(favicon);
     }
 
+    function withUniqueSvgIds(svgMarkup) {
+        const instanceToken = `patna-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+        const idMap = new Map();
+
+        const markupWithIds = svgMarkup.replace(/\bid="([^"]+)"/g, (match, idValue) => {
+            const nextId = `${idValue}__${instanceToken}`;
+            idMap.set(idValue, nextId);
+            return `id="${nextId}"`;
+        });
+
+        const updateUrlRefs = (input) => input.replace(/url\(#([^)]+)\)/g, (match, idValue) => {
+            const nextId = idMap.get(idValue);
+            return nextId ? `url(#${nextId})` : match;
+        });
+
+        const updateHashRefs = (input) => input.replace(/href="#([^"]+)"/g, (match, idValue) => {
+            const nextId = idMap.get(idValue);
+            return nextId ? `href="#${nextId}"` : match;
+        });
+
+        const updateAriaLabelledBy = (input) => input.replace(/\baria-labelledby="([^"]+)"/g, (match, idsValue) => {
+            const tokens = idsValue.split(/\s+/).filter(Boolean);
+            const updated = tokens.map((token) => idMap.get(token) || token).join(" ");
+            return `aria-labelledby="${updated}"`;
+        });
+
+        return updateAriaLabelledBy(updateHashRefs(updateUrlRefs(markupWithIds)));
+    }
+
     function buildLogo(extraClass = "") {
         return `
             <a class="site-logo ${extraClass}" href="./index.html" aria-label="${CONFIG.logo.label}">
                 <span class="site-logo__mark" aria-hidden="true">
-                    ${CONFIG.logo.svgMarkup}
+                    ${withUniqueSvgIds(CONFIG.logo.svgMarkup)}
                 </span>
                 <span class="site-logo__text">
                     <strong>${CONFIG.brandName}</strong>
