@@ -304,16 +304,16 @@
                 </div>
 
              <ul class="about-highlights">
-    ${[
+                      ${[
                     ...CONFIG.home.about.highlights.slice(0, 3),
                     "Clear reporting and refinement direction"
                 ].map((highlight, index) => `
-        <li>
+                  <li>
             <span>${String(index + 1).padStart(2, "0")}</span>
             <strong>${highlight}</strong>
-        </li>
-    `).join("")}
-</ul>
+                   </li>
+                  `).join("")}
+                </ul>
 
                 <div class="about-contact-row">
                     <a href="${CONFIG.contact.emailHref}">
