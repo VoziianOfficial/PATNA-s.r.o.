@@ -387,7 +387,7 @@
             const image =
                 CONFIG.home?.growthSystem?.image ||
                 CONFIG.home?.hero?.image ||
-                "./assets/images/process-team.jpg";
+                "../assets/images/process-team.jpg";
 
             section.style.setProperty("--benefits-image", `url("${image}")`);
         }
@@ -484,7 +484,7 @@
         const fallbackImage =
             CONFIG.home?.growthSystem?.image ||
             CONFIG.home?.about?.image ||
-            "./assets/images/process-team.jpg";
+            "../assets/images/process-team.jpg";
 
         container.innerHTML = `
         <div class="process-switcher" data-process-switcher>
@@ -555,7 +555,7 @@
         const fallbackImage =
             CONFIG.home?.growthSystem?.image ||
             CONFIG.home?.about?.image ||
-            "./assets/images/process-team.jpg";
+            "../assets/images/process-team.jpg";
 
         function setActive(index) {
             const step = steps[index];
