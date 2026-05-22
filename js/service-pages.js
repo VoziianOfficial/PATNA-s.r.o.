@@ -123,9 +123,14 @@
 
         if (intro) {
             intro.innerHTML = `
-                <h2>${CONFIG.servicePageDefaults.overviewTitle}</h2>
-                <p>${details.overview}</p>
-            `;
+            <p class="service-flow__eyebrow">${service.shortTitle} overview</p>
+
+            <h2 id="service-overview-title">
+                ${CONFIG.servicePageDefaults.overviewTitle}
+            </h2>
+
+            <p>${details.overview}</p>
+        `;
         }
 
         if (metrics) {
@@ -153,12 +158,21 @@
             ];
 
             metrics.innerHTML = metricItems.map((item, index) => `
-                <article class="service-metric" data-aos="fade-up" data-aos-delay="${index * 70}">
+            <article class="service-flow__item" data-aos="fade-up" data-aos-delay="${index * 60}">
+                <span class="service-flow__number">
+                    ${String(index + 1).padStart(2, "0")}
+                </span>
+
+                <span class="service-flow__icon">
                     <i data-lucide="${item.icon}" aria-hidden="true"></i>
+                </span>
+
+                <span class="service-flow__copy">
                     <strong>${item.title}</strong>
                     <span>${item.text}</span>
-                </article>
-            `).join("");
+                </span>
+            </article>
+        `).join("");
         }
     }
 
