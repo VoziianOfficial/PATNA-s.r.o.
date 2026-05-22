@@ -121,13 +121,108 @@
         const container = qs("[data-home-stats]");
         if (!container) return;
 
-        container.innerHTML = CONFIG.home.stats.map((item, index) => `
-            <article class="trust-item" data-aos="fade-up" data-aos-delay="${index * 70}">
-                <strong>${item.value}</strong>
-                <span>${item.label}</span>
-                <p>${item.text}</p>
-            </article>
-        `).join("");
+        const stats = [
+            {
+                icon: "sparkles",
+                value: 200,
+                suffix: "+",
+                label: "Projects Completed"
+            },
+            {
+                icon: "thumbs-up",
+                value: 30,
+                suffix: "+",
+                label: "Industries Served"
+            },
+            {
+                icon: "compass",
+                value: 10,
+                suffix: "+",
+                label: "Years Of Experience"
+            },
+            {
+                icon: "star",
+                value: 100,
+                suffix: "%",
+                label: "Focused On Results"
+            }
+        ];
+
+        container.innerHTML = stats.map((item, index) => `
+        <article class="trust-item trust-item--counter" data-aos="fade-up" data-aos-delay="${index * 70}">
+            <span class="trust-item__icon">
+                <i data-lucide="${item.icon}" aria-hidden="true"></i>
+            </span>
+
+            <div class="trust-item__content">
+                <strong>
+                    <span
+                        class="trust-counter"
+                        data-count="${item.value}"
+                        data-suffix="${item.suffix}"
+                    >0${item.suffix}</span>
+                </strong>
+                <p>${item.label}</p>
+            </div>
+        </article>
+    `).join("");
+    }
+
+    function initCountUpStats() {
+        const section = qs(".trust-strip");
+        const counters = qsa(".trust-counter");
+
+        if (!section || !counters.length) return;
+
+        const duration = 1600;
+
+        function animateCounter(counter) {
+            const target = Number(counter.dataset.count || 0);
+            const suffix = counter.dataset.suffix || "";
+            const startTime = performance.now();
+
+            counter.textContent = `0${suffix}`;
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easedProgress = 1 - Math.pow(1 - progress, 3);
+                const currentValue = Math.floor(easedProgress * target);
+
+                counter.textContent = `${currentValue}${suffix}`;
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    counter.textContent = `${target}${suffix}`;
+                }
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        function startCounters() {
+            counters.forEach((counter) => {
+                if (counter.dataset.animated === "true") return;
+
+                counter.dataset.animated = "true";
+                animateCounter(counter);
+            });
+        }
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+
+                startCounters();
+                obs.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.35,
+            rootMargin: "0px 0px -10% 0px"
+        });
+
+        observer.observe(section);
     }
 
     function renderAboutSection() {
@@ -320,6 +415,7 @@
         renderHeroPanel();
         renderServicesPreview();
         renderTrustStrip();
+        initCountUpStats();
         renderAboutSection();
         renderBenefits();
         renderProcess();
