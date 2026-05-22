@@ -773,7 +773,7 @@
 
 .growth-system__shell {
     position: relative;
-    min-height: 620px;
+    min-height: 320px;
     display: grid;
     grid-template-columns: 1fr 0.92fr;
     gap: 34px;
@@ -4065,5 +4065,88 @@
 
     .process-visual__step {
         display: none;
+    }
+}
+
+/* GROWTH STEPS — PREMIUM HOVERS */
+.growth-step {
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        background var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.growth-step::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateX(-35%);
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 18% 30%, rgba(31, 95, 255, 0.24), transparent 42%),
+        linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+    transition:
+        opacity var(--transition-base),
+        transform 560ms ease;
+}
+
+.growth-step:hover {
+    transform: translateY(-4px);
+    border-color: rgba(31, 95, 255, 0.48);
+    background: rgba(31, 95, 255, 0.12);
+    box-shadow:
+        0 18px 46px rgba(0, 0, 0, 0.22),
+        0 0 0 1px rgba(31, 95, 255, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.growth-step:hover::before {
+    opacity: 1;
+    transform: translateX(32%);
+}
+
+.growth-step span,
+.growth-step p {
+    position: relative;
+    z-index: 1;
+}
+
+.growth-step span {
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base),
+        background var(--transition-base);
+}
+
+.growth-step:hover span {
+    transform: translateY(-2px) scale(1.05);
+    background: linear-gradient(135deg, #2f80ff, #123bb8);
+    box-shadow:
+        0 16px 34px rgba(31, 95, 255, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.growth-step p {
+    transition: color var(--transition-base);
+}
+
+.growth-step:hover p {
+    color: var(--color-white);
+}
+
+/* GROWTH SYSTEM — COMPACT SECTION SPACING */
+.growth-system {
+    padding-top: 96px !important;
+    padding-bottom: 48px !important;
+}
+@media (max-width: 760px) {
+    .growth-system {
+        padding-top: 68px !important;
+        padding-bottom: 34px !important;
     }
 }
