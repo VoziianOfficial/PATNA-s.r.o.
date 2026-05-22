@@ -362,17 +362,15 @@
 
         return descriptions[title] || "This step keeps the work structured, measurable, and easier to improve over time.";
     }
-
     function renderFocusAreas(service) {
         const container = qs("[data-service-focus]");
         if (!container) return;
 
         container.innerHTML = service.focusAreas.map((area, index) => `
-            <span class="focus-pill" data-aos="zoom-in" data-aos-delay="${index * 50}">
-                <i data-lucide="check-circle-2" aria-hidden="true"></i>
-                ${area}
-            </span>
-        `).join("");
+        <span class="marketing-signals__signal" data-aos="fade-up" data-aos-delay="${index * 45}">
+            ${area}
+        </span>
+    `).join("");
     }
 
     function renderRelatedServices(service) {
