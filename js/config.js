@@ -407,27 +407,31 @@
             process: [
                 {
                     step: "01",
-                    icon: "scan-search",
-                    title: "Discovery & Goals",
-                    text: "Clarify the business model, target audience, offer, current marketing setup, and realistic growth priorities."
+                    icon: "search-check",
+                    title: "Discovery",
+                    text: "We review the business model, audience, goals, and current marketing situation.",
+                    image: "./assets/images/process-discovery-1.jpg"
                 },
                 {
                     step: "02",
-                    icon: "workflow",
-                    title: "Research & Strategy",
-                    text: "Map channels, keywords, local intent, creative direction, landing page needs, and tracking requirements."
+                    icon: "layout-dashboard",
+                    title: "Strategy Setup",
+                    text: "We define channels, landing experience, tracking needs, and campaign structure.",
+                    image: "./assets/images/process-strategy-2.jpg"
                 },
                 {
                     step: "03",
                     icon: "rocket",
-                    title: "Launch & Optimize",
-                    text: "Build campaigns, pages, or content systems with careful structure, monitoring, and refinement."
+                    title: "Launch",
+                    text: "We prepare campaigns, pages, messaging, and measurement before going live.",
+                    image: "./assets/images/process-launch-3.jpg"
                 },
                 {
                     step: "04",
-                    icon: "line-chart",
-                    title: "Report & Refine",
-                    text: "Review results, identify useful patterns, and adjust strategy based on data and business context."
+                    icon: "bar-chart-3",
+                    title: "Reporting",
+                    text: "We review performance signals and refine the system based on real data.",
+                    image: "./assets/images/process-reporting-4.jpg"
                 }
             ],
             approach: [
