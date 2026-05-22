@@ -760,7 +760,6 @@
     }
 }
 
-/* SERVICE FLOW — LIGHT HORIZONTAL OVERVIEW */
 .service-flow {
     position: relative;
     isolation: isolate;
@@ -794,7 +793,6 @@
     gap: 36px;
 }
 
-/* TOP FULL WIDTH HEADING */
 .service-flow__heading {
     width: 100%;
     max-width: none;
@@ -830,7 +828,6 @@
     line-height: 1.76 !important;
 }
 
-/* BOTTOM HORIZONTAL TEXT WITH MOVING LINES */
 .service-flow__lines {
     position: relative;
     display: grid !important;
@@ -1003,7 +1000,6 @@
     line-height: 1.52;
 }
 
-/* ANIMATIONS */
 @keyframes serviceFlowLine {
     from {
         background-position: 0% 50%;
@@ -1031,7 +1027,6 @@
     }
 }
 
-/* TABLET */
 @media (max-width: 1180px) {
     .service-flow {
         padding: 54px 0 !important;
@@ -1068,7 +1063,6 @@
     }
 }
 
-/* MOBILE */
 @media (max-width: 680px) {
     .service-flow {
         padding: 44px 0 !important;
@@ -1143,7 +1137,6 @@
     }
 }
 
-/* SERVICE FLOW — ITEM HOVERS */
 .service-flow__item {
     cursor: default;
 }
@@ -1207,7 +1200,6 @@
     color: #404956;
 }
 
-/* плавность внутри каждого пункта */
 .service-flow__number,
 .service-flow__icon,
 .service-flow__icon svg,
@@ -1220,7 +1212,6 @@
         box-shadow var(--transition-base);
 }
 
-/* разные маленькие акценты на каждый пункт */
 .service-flow__item:nth-child(1):hover::before {
     background: linear-gradient(90deg, #7d858f, #d4d8df, transparent);
 }
@@ -1237,7 +1228,6 @@
     background: linear-gradient(90deg, #9ba1aa, #d9dde3, transparent);
 }
 
-/* mobile/tablet: hover мягче, чтобы ничего не прыгало */
 @media (max-width: 680px) {
     .service-flow__item:hover {
         transform: translateX(4px);
@@ -1252,7 +1242,6 @@
     }
 }
 
-/* SERVICE SCOPE — TWO EQUAL PANELS */
 .service-scope {
     position: relative;
     overflow: hidden;
@@ -1311,9 +1300,6 @@
         0 0 0 1px rgba(31, 95, 255, 0.06);
 }
 
-
-
-/* LEFT CONTENT PANEL */
 .service-scope__panel--content {
     display: flex;
     flex-direction: column;
@@ -1361,7 +1347,6 @@
     line-height: 1.72;
 }
 
-/* SIMPLE TEXT ITEMS — NOT CARDS */
 .service-scope__items {
     display: grid;
     gap: 0;
@@ -1445,7 +1430,6 @@
     line-height: 1.5;
 }
 
-/* RIGHT PHOTO PANEL */
 .service-scope__panel--media {
     background: #101216;
 }
@@ -1500,7 +1484,6 @@
     opacity: 0.94;
 }
 
-/* TABLET */
 @media (max-width: 1180px) {
     .service-scope {
         padding: 64px 0 !important;
@@ -1532,7 +1515,6 @@
     }
 }
 
-/* MOBILE */
 @media (max-width: 680px) {
     .service-scope {
         padding: 48px 0 !important;
@@ -1591,7 +1573,6 @@
     }
 }
 
-/* MATTERS SECTION — SECTION SHINE + CARD HOVER */
 .service-page .matters-section {
     position: relative;
     isolation: isolate;
@@ -1607,7 +1588,6 @@
         var(--matters-image, url("../assets/images/matters-bg.jpg")) center / cover no-repeat;
 }
 
-/* мягкий блеск на всю секцию */
 .service-page .matters-section::before {
     content: "";
     position: absolute;
@@ -1626,7 +1606,6 @@
     animation: mattersSectionShine 8s ease-in-out infinite;
 }
 
-/* глубокий мягкий glow, чтобы секция не была плоской */
 .service-page .matters-section::after {
     content: "";
     position: absolute;
@@ -1646,7 +1625,6 @@
     z-index: 2;
 }
 
-/* основная оболочка тоже получает лёгкую реакцию */
 .matters-shell {
     position: relative;
     overflow: hidden;
@@ -1685,7 +1663,6 @@
     transform: translateX(24%);
 }
 
-/* карточка справа */
 .matters-note {
     position: relative;
     overflow: hidden;
@@ -1792,7 +1769,6 @@
     }
 }
 
-/* METHOD ITEMS — PREMIUM GRAY HOVER */
 .method-list .method-item {
     position: relative;
     isolation: isolate;
@@ -1855,7 +1831,6 @@
     transform: translateX(18%);
 }
 
-/* number badge */
 .method-list .method-item>span {
     position: relative;
     z-index: 2;
@@ -1877,7 +1852,6 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 
-/* text */
 .method-list .method-item h3,
 .method-list .method-item p,
 .method-list .method-item div {
@@ -1898,7 +1872,6 @@
     color: #48505b !important;
 }
 
-/* mobile — softer hover */
 @media (max-width: 680px) {
     .method-list .method-item:hover {
         transform: translateY(-3px) !important;
@@ -1910,8 +1883,6 @@
     }
 }
 
-
-/* SERVICE ROAD — PROCESS STEPS REDESIGN */
 .service-road {
     position: relative;
     isolation: isolate;
@@ -1969,7 +1940,6 @@
     color: rgba(216, 221, 229, 0.74);
 }
 
-/* Track */
 .service-road__track {
     position: relative;
     display: grid !important;
@@ -1997,7 +1967,6 @@
     animation: serviceRoadLine 6s linear infinite;
 }
 
-/* Step */
 .service-road__step {
     position: relative;
     min-height: 310px;
@@ -2081,7 +2050,6 @@
     animation-duration: 2.8s;
 }
 
-/* Inner elements */
 .service-road__step-index,
 .service-road__step-copy {
     position: relative;
@@ -2126,7 +2094,6 @@
     color: rgba(244, 246, 248, 0.78);
 }
 
-/* Animations */
 @keyframes serviceRoadLine {
     from {
         background-position: 0% 50%;
@@ -2154,7 +2121,6 @@
     }
 }
 
-/* Tablet */
 @media (max-width: 1180px) {
     .service-road {
         padding: 74px 0 !important;
@@ -2182,7 +2148,6 @@
     }
 }
 
-/* Mobile */
 @media (max-width: 680px) {
     .service-road {
         padding: 56px 0 !important;
@@ -2240,7 +2205,6 @@
     }
 }
 
-/* METHOD SECTION — SIDEBAR + NAV CARD */
 .method-section {
     position: relative;
     overflow: hidden;
@@ -2262,7 +2226,6 @@
     align-self: start;
 }
 
-/* optional sticky only on desktop */
 @media (min-width: 1181px) {
     .method-sidebar {
         position: sticky;
@@ -2270,7 +2233,6 @@
     }
 }
 
-/* left main card */
 .method-section .method-panel {
     position: relative;
     overflow: hidden;
@@ -2289,7 +2251,6 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-/* small navigation card */
 .method-nav-card {
     position: relative;
     overflow: hidden;
@@ -2400,7 +2361,6 @@
     color: rgba(255, 255, 255, 0.56);
 }
 
-/* keep right cards clean */
 .method-section .method-list {
     display: grid;
     gap: 16px;
@@ -2410,7 +2370,6 @@
     border-radius: 0;
 }
 
-/* TABLET */
 @media (max-width: 1180px) {
     .method-section .method-layout {
         grid-template-columns: 1fr;
@@ -2435,7 +2394,6 @@
     }
 }
 
-/* MOBILE */
 @media (max-width: 680px) {
     .method-section {
         padding-top: 56px;
@@ -2466,14 +2424,12 @@
     }
 }
 
-/* METHOD SIDEBAR — FIX PANEL OVER NAV */
 .method-sidebar {
     display: grid !important;
     gap: 16px !important;
     align-self: start !important;
 }
 
-/* sticky только на общем левом блоке */
 @media (min-width: 1181px) {
     .method-sidebar {
         position: sticky !important;
@@ -2481,7 +2437,6 @@
     }
 }
 
-/* сама верхняя карточка НЕ sticky */
 .method-sidebar .method-panel,
 .method-sidebar .method-panel.light-card {
     position: relative !important;
@@ -2493,14 +2448,12 @@
     z-index: 1 !important;
 }
 
-/* навигация всегда ниже карточки */
 .method-sidebar .method-nav-card {
     position: relative !important;
     z-index: 2 !important;
     margin-top: 0 !important;
 }
 
-/* tablet/mobile */
 @media (max-width: 1180px) {
     .method-sidebar {
         position: relative !important;
@@ -2516,8 +2469,6 @@
     }
 }
 
-
-/* METHOD SECTION — LIGHT BORDER HOVERS ONLY */
 .method-section .method-panel,
 .method-section .method-nav-card,
 .method-section .method-item {
@@ -2528,7 +2479,6 @@
         background var(--transition-base);
 }
 
-/* main left card hover — light only */
 .method-section .method-panel:hover {
     transform: translateY(-3px) !important;
     background: #ffffff !important;
@@ -2538,7 +2488,6 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 
-/* nav card hover — no dark effect */
 .method-section .method-nav-card:hover {
     transform: translateY(-3px);
     background:
@@ -2549,7 +2498,6 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.92) !important;
 }
 
-/* navigation buttons — remove dark hover */
 .method-section .method-nav-card__links a {
     color: #151922 !important;
     background: rgba(255, 255, 255, 0.72) !important;
@@ -2574,7 +2522,6 @@
     color: rgba(16, 18, 22, 0.52) !important;
 }
 
-/* right method cards — remove dark/gray filled hover */
 .method-section .method-item::before,
 .method-section .method-item::after {
     display: none !important;
@@ -2596,7 +2543,6 @@
     color: #5f6875 !important;
 }
 
-/* number badge — light hover, not dark */
 .method-section .method-item:hover>span {
     color: #151922 !important;
     background:
@@ -2606,7 +2552,6 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 
-/* mobile — even softer */
 @media (max-width: 680px) {
 
     .method-section .method-panel:hover,
@@ -2618,7 +2563,6 @@
     }
 }
 
-/* MARKETING SIGNALS — NO CARDS / NO ICONS */
 .marketing-signals {
     position: relative;
     isolation: isolate;
@@ -2669,7 +2613,6 @@
     line-height: 1.72;
 }
 
-/* board */
 .marketing-signals__board {
     position: relative;
     display: grid;
@@ -2708,7 +2651,6 @@
     animation-direction: reverse;
 }
 
-/* left marketing visual */
 .marketing-signals__visual {
     position: relative;
     min-height: 420px;
@@ -2803,7 +2745,6 @@
     animation-delay: 1.6s;
 }
 
-/* right signal text */
 .marketing-signals__list {
     display: flex !important;
     flex-wrap: wrap;
@@ -2874,7 +2815,6 @@
     background: linear-gradient(90deg, rgba(15, 18, 25, 0.54), transparent);
 }
 
-/* animations */
 @keyframes marketingSignalLine {
     from {
         background-position: 0% 50%;
@@ -2902,7 +2842,6 @@
     }
 }
 
-/* tablet */
 @media (max-width: 1180px) {
     .marketing-signals {
         padding: 64px 0 !important;
@@ -2927,7 +2866,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 680px) {
     .marketing-signals {
         padding: 52px 0 !important;
@@ -2993,7 +2931,6 @@
     }
 }
 
-/* SERVICE FLOW — ICON TOP RIGHT IN EACH ITEM */
 .service-flow__item {
     position: relative !important;
     padding: 24px 82px 24px 22px !important;
@@ -3011,7 +2948,6 @@
     padding-top: 42px;
 }
 
-/* hover остается аккуратный */
 .service-flow__item:hover .service-flow__icon {
     transform: translateY(-3px) scale(1.04) !important;
 }
@@ -3058,7 +2994,6 @@
     }
 }
 
-/* METHOD LIST — MOBILE BADGE LEFT */
 @media (max-width: 680px) {
     .method-section .method-list {
         gap: 10px !important;
@@ -3105,10 +3040,9 @@
     }
 }
 
-/* SERVICE PAGES — MOBILE CENTERED SECTION HEADINGS */
 @media (max-width: 680px) {
 
-    /* общие заголовки секций */
+    
     .service-page .section-heading,
     .service-page .service-flow__heading,
     .service-page .service-road__heading,
@@ -3152,7 +3086,7 @@
         text-align: center !important;
     }
 
-    /* Service Scope: центрируем только верхний текст карточки, список внутри оставляем читаемым */
+    
     .service-page .service-scope__panel--content {
         text-align: center !important;
         align-items: center !important;
@@ -3171,7 +3105,7 @@
         text-align: left !important;
     }
 
-    /* Why This Service Matters */
+    
     .service-page .matters-content {
         text-align: center !important;
     }
@@ -3184,7 +3118,7 @@
         text-align: center !important;
     }
 
-    /* Strategy / Method */
+    
     .service-page .method-panel {
         text-align: center !important;
     }
@@ -3196,7 +3130,7 @@
         text-align: center !important;
     }
 
-    /* FAQ + CTA */
+    
     .service-page .service-faq-cta .section-heading {
         text-align: center !important;
     }
@@ -3209,10 +3143,9 @@
     }
 }
 
-/* SERVICE PAGES — MOBILE CENTER ONLY HEADINGS */
 @media (max-width: 680px) {
 
-    /* Hero title only */
+    
     .service-page .service-title {
         width: 100% !important;
         max-width: 100% !important;
@@ -3221,7 +3154,7 @@
         text-align: center !important;
     }
 
-    /* Do NOT center hero text/buttons/badges */
+    
     .service-page .service-hero__content {
         text-align: left !important;
     }
@@ -3235,7 +3168,7 @@
         justify-content: flex-start !important;
     }
 
-    /* Section headings only */
+    
     .service-page .section-heading h2,
     .service-page .service-flow__heading h2,
     .service-page .service-road__heading h2,
@@ -3250,7 +3183,7 @@
         text-align: center !important;
     }
 
-    /* Eyebrow можно тоже оставить по центру как часть заголовка */
+    
     .service-page .eyebrow,
     .service-page .service-flow__eyebrow {
         width: fit-content !important;
@@ -3259,7 +3192,7 @@
         text-align: center !important;
     }
 
-    /* Paragraphs/descriptions stay natural */
+    
     .service-page .section-heading p,
     .service-page .service-flow__heading>p,
     .service-page .service-road__heading p:not(.eyebrow),
@@ -3271,7 +3204,6 @@
     }
 }
 
-/* SERVICE HERO — HIDE BADGE LIST ON MOBILE */
 @media (max-width: 680px) {
 
     .service-page .service-hero .badge-list,
@@ -3281,7 +3213,6 @@
     }
 }
 
-/* SERVICE HERO PANEL — MOBILE ICON TOP RIGHT */
 @media (max-width: 680px) {
     .service-page .service-hero__panel {
         position: relative !important;
@@ -3309,7 +3240,6 @@
     }
 }
 
-/* SERVICE HERO — TABLET CENTERED FULL WIDTH CONTENT */
 @media (min-width: 681px) and (max-width: 1180px) {
     .service-page .service-hero {
         min-height: 720px !important;
@@ -3370,7 +3300,6 @@
     }
 }
 
-/* MARKETING SIGNALS — MOBILE 2 COLUMNS */
 @media (max-width: 680px) {
     .service-page .marketing-signals__list {
         display: grid !important;

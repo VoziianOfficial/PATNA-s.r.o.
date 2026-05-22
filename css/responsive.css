@@ -348,7 +348,6 @@
     }
 }
 
-/* Global overflow safety */
 .page,
 .home-page,
 .service-page,
@@ -388,7 +387,6 @@ button {
     max-width: 100%;
 }
 
-/* Better touch behavior */
 @media (hover: none) {
 
     .glass-card:hover,

@@ -1,22 +1,5 @@
 "use strict";
 
-/*
-  PATNA Global Website Script
-  Shared across homepage, service pages, and legal pages.
-
-  Responsibilities:
-  - inject shared sticky header
-  - inject footer
-  - inject cookie banner
-  - initialize desktop services dropdown with closing delay
-  - initialize fullscreen mobile menu
-  - initialize FAQ accordions
-  - initialize contact forms
-  - inject global business data from config.js
-  - apply page meta
-  - initialize Lucide and AOS safely
-*/
-
 (function () {
     const CONFIG = window.PATNA_CONFIG || window.SITE_CONFIG;
 

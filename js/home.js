@@ -1,10 +1,5 @@
 "use strict";
 
-/*
-  PATNA Homepage Script
-  Handles homepage-only dynamic rendering and interactions.
-*/
-
 (function () {
     const CONFIG = window.PATNA_CONFIG || window.SITE_CONFIG;
 

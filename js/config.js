@@ -1,11 +1,5 @@
 "use strict";
 
-/*
-  PATNA Website Global Configuration
-  Change core business data, navigation, services, page meta,
-  CTA labels, footer text, and reusable content from this file.
-*/
-
 const CONFIG_SCRIPT_URL = document.currentScript
     ? new URL(document.currentScript.src)
     : new URL("./js/config.js", window.location.href);
@@ -63,11 +57,7 @@ const asset = (path) => {
 
         logo: {
             label: "PATNA Growth Marketing Agency",
-            /*
-              Marketing Prism Mark.
-              Not letter-based, not placed inside a circle or square.
-              main.js injects this SVG into header/footer/mobile logo slots.
-            */
+            
             svgMarkup: `
                 <svg class="logo-mark" viewBox="3 2 154 116" role="img" aria-label="PATNA marketing prism mark" xmlns="http://www.w3.org/2000/svg">
                     <defs>

@@ -1,13 +1,5 @@
 "use strict";
 
-/*
-  PATNA Legal Pages Script
-  Shared across:
-  - privacy-policy.html
-  - terms-of-service.html
-  - cookie-policy.html
-*/
-
 (function () {
     const CONFIG = window.PATNA_CONFIG || window.SITE_CONFIG;
 

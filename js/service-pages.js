@@ -1,16 +1,5 @@
 "use strict";
 
-/*
-  PATNA Service Pages Script
-  Shared across:
-  - google-ads.html
-  - seo-optimization.html
-  - social-media-marketing.html
-  - web-design.html
-  - conversion-boost.html
-  - local-seo.html
-*/
-
 (function () {
     const CONFIG = window.PATNA_CONFIG || window.SITE_CONFIG;
 
