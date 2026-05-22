@@ -54,6 +54,7 @@ const asset = (path) => {
                 heroWebDesign: asset("assets/images/hero-web-design.jpg"),
                 heroConversion: asset("assets/images/hero-conversion.jpg"),
                 heroLocalSeo: asset("assets/images/hero-local-seo.jpg"),
+                mattersBg: asset("assets/images/matters-bg.jpg"),
                 aboutAgency: asset("assets/images/about-agency.jpg"),
                 processTeam: asset("assets/images/process-team.jpg"),
                 ctaBg: asset("assets/images/cta-bg.jpg")

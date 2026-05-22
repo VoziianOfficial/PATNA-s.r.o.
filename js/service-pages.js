@@ -181,12 +181,15 @@
         if (!container) return;
 
         container.innerHTML = details.includes.map((item, index) => `
-            <article class="include-card light-card" data-aos="fade-up" data-aos-delay="${index * 65}">
-                <span class="include-card__number">${String(index + 1).padStart(2, "0")}</span>
-                <h3>${item}</h3>
+        <div class="service-scope__item" data-aos="fade-up" data-aos-delay="${index * 55}">
+            <span>${String(index + 1).padStart(2, "0")}</span>
+
+            <div>
+                <strong>${item}</strong>
                 <p>${buildIncludeDescription(item)}</p>
-            </article>
-        `).join("");
+            </div>
+        </div>
+    `).join("");
     }
 
     function buildIncludeDescription(title) {
@@ -240,6 +243,12 @@
     function renderMatters(details) {
         const content = qs("[data-service-matters-content]");
         const note = qs("[data-service-matters-note]");
+        const section = qs(".matters-section");
+
+        if (section) {
+            const mattersImage = CONFIG.assets?.images?.mattersBg || "../assets/images/matters-bg.jpg";
+            section.style.setProperty("--matters-image", `url("${mattersImage}")`);
+        }
 
         if (content) {
             content.innerHTML = `
@@ -250,7 +259,7 @@
 
         if (note) {
             note.innerHTML = `
-                <i data-lucide="shield-check" aria-hidden="true"></i>
+                <i data-lucide="activity" aria-hidden="true"></i>
                 <strong>Honest performance context</strong>
                 <span>Outcomes may vary depending on budget, competition, market conditions, tracking setup, offer quality, and prior campaign history.</span>
             `;
