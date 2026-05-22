@@ -480,19 +480,154 @@
         const container = qs("[data-home-process]");
         if (!container) return;
 
-        container.innerHTML = CONFIG.home.process.map((step, index) => `
-            <article class="process-card light-card" data-aos="fade-up" data-aos-delay="${index * 80}">
-                <div class="process-card__number">
-                    <strong>${step.step}</strong>
-                    <span class="icon-bubble icon-bubble--light">
-                        <i data-lucide="${step.icon}" aria-hidden="true"></i>
-                    </span>
-                </div>
+        const steps = CONFIG.home.process || [];
+        const fallbackImage =
+            CONFIG.home?.growthSystem?.image ||
+            CONFIG.home?.about?.image ||
+            "./assets/images/process-team.jpg";
 
-                <h3>${step.title}</h3>
-                <p>${step.text}</p>
-            </article>
-        `).join("");
+        container.innerHTML = `
+        <div class="process-switcher" data-process-switcher>
+            <div class="process-switcher__list" role="tablist" aria-label="PATNA working process steps">
+                ${steps.map((step, index) => `
+                    <button
+                        class="process-switcher__item ${index === 0 ? "is-active" : ""}"
+                        type="button"
+                        role="tab"
+                        aria-selected="${index === 0 ? "true" : "false"}"
+                        data-process-tab
+                        data-process-index="${index}"
+                    >
+                        <span class="process-switcher__number">${step.step || String(index + 1).padStart(2, "0")}</span>
+
+                        <span class="process-switcher__icon">
+                            <i data-lucide="${step.icon}" aria-hidden="true"></i>
+                        </span>
+
+                        <span class="process-switcher__text">
+                            <strong>${step.title}</strong>
+                            <span>${step.text}</span>
+                        </span>
+                    </button>
+                `).join("")}
+            </div>
+
+            <aside class="process-visual" data-process-visual aria-live="polite">
+                <img
+                    src="${steps[0]?.image || fallbackImage}"
+                    alt="PATNA marketing process visual"
+                    loading="lazy"
+                    data-process-image
+                >
+
+                <div class="process-visual__overlay">
+                    <span class="process-visual__step" data-process-step>
+                        ${steps[0]?.step || "01"}
+                    </span>
+
+                    <span class="process-visual__icon">
+                        <i data-lucide="${steps[0]?.icon || "workflow"}" aria-hidden="true" data-process-icon></i>
+                    </span>
+
+                    <div>
+                        <p>Selected step</p>
+                        <strong data-process-title>${steps[0]?.title || "Discovery"}</strong>
+                        <span data-process-text>${steps[0]?.text || ""}</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    `;
+    }
+
+    function initProcessSwitcher() {
+        const switcher = qs("[data-process-switcher]");
+        if (!switcher) return;
+
+        const tabs = qsa("[data-process-tab]", switcher);
+        const image = qs("[data-process-image]", switcher);
+        const stepLabel = qs("[data-process-step]", switcher);
+        const title = qs("[data-process-title]", switcher);
+        const text = qs("[data-process-text]", switcher);
+        const icon = qs("[data-process-icon]", switcher);
+
+        const steps = CONFIG.home.process || [];
+        const fallbackImage =
+            CONFIG.home?.growthSystem?.image ||
+            CONFIG.home?.about?.image ||
+            "./assets/images/process-team.jpg";
+
+        let activeIndex = 0;
+        let timer = null;
+
+        function setActive(index) {
+            const step = steps[index];
+            if (!step) return;
+
+            activeIndex = index;
+
+            tabs.forEach((tab, tabIndex) => {
+                const isActive = tabIndex === index;
+                tab.classList.toggle("is-active", isActive);
+                tab.setAttribute("aria-selected", isActive ? "true" : "false");
+            });
+
+            if (image) {
+                image.style.opacity = "0";
+
+                window.setTimeout(() => {
+                    image.src = step.image || fallbackImage;
+                    image.style.opacity = "1";
+                }, 180);
+            }
+
+            if (stepLabel) stepLabel.textContent = step.step || String(index + 1).padStart(2, "0");
+            if (title) title.textContent = step.title;
+            if (text) text.textContent = step.text;
+
+            if (icon) {
+                icon.setAttribute("data-lucide", step.icon || "workflow");
+            }
+
+            if (window.PATNA && typeof window.PATNA.refreshIcons === "function") {
+                window.PATNA.refreshIcons();
+            }
+        }
+
+        function startAutoSwitch() {
+            stopAutoSwitch();
+
+            timer = window.setInterval(() => {
+                const nextIndex = (activeIndex + 1) % tabs.length;
+                setActive(nextIndex);
+            }, 4200);
+        }
+
+        function stopAutoSwitch() {
+            if (timer) {
+                window.clearInterval(timer);
+                timer = null;
+            }
+        }
+
+        tabs.forEach((tab) => {
+            const index = Number(tab.dataset.processIndex || 0);
+
+            tab.addEventListener("click", () => {
+                setActive(index);
+                startAutoSwitch();
+            });
+
+            tab.addEventListener("mouseenter", () => {
+                setActive(index);
+            });
+        });
+
+        switcher.addEventListener("mouseenter", stopAutoSwitch);
+        switcher.addEventListener("mouseleave", startAutoSwitch);
+
+        setActive(0);
+        startAutoSwitch();
     }
 
     function renderApproach() {
@@ -608,6 +743,7 @@
         renderBenefits();
         initBenefitsDashboard();
         renderProcess();
+        initProcessSwitcher();
         renderApproach();
         renderGrowthSystem();
         renderFaq();
