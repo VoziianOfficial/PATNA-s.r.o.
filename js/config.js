@@ -466,7 +466,7 @@ const asset = (path) => {
             growthSystem: {
                 eyebrow: "Growth System",
                 title: "A clear, practical, and measurable approach.",
-                image: "../assets/images/process-team.jpg",
+                image: "../assets/images/process-team-card.jpg",
                 text: "PATNA connects the offer, audience, channel plan, landing experience, tracking setup, and reporting rhythm so marketing work becomes easier to understand and improve.",
                 items: [
                     "Define the offer and customer intent",
