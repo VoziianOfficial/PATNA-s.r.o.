@@ -145,11 +145,8 @@
 .site-nav__link.is-active,
 .site-nav__item.is-open>.site-nav__link {
     color: var(--color-white);
-    background: rgba(255, 255, 255, 0.075);
 }
-
 .site-nav__link:hover::after,
-.site-nav__link.is-active::after,
 .site-nav__item.is-open>.site-nav__link::after {
     transform: scaleX(1);
 }

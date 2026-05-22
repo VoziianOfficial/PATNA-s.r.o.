@@ -28,61 +28,57 @@
         if (!hero) return;
 
         hero.innerHTML = `
-            <div class="home-hero__eyebrow" data-aos="fade-up">
-                ${CONFIG.home.hero.eyebrow}
-            </div>
+        <h1 class="hero-title" data-aos="fade-up">
+            We Drive Growth
+            <span>Through Smart</span>
+            Digital Marketing
+        </h1>
 
-            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="80">
-                ${CONFIG.home.hero.title}
-            </h1>
+        <p class="hero-text" data-aos="fade-up" data-aos-delay="120">
+            PATNA is a performance-driven marketing agency helping businesses get more traffic,
+            more leads and more customers.
+        </p>
 
-            <p class="hero-text" data-aos="fade-up" data-aos-delay="160">
-                ${CONFIG.home.hero.text}
-            </p>
+        <div class="btn-row" data-aos="fade-up" data-aos-delay="220">
+            <a class="btn btn--primary" href="#services">
+                <span>Our Services</span>
+                <i data-lucide="layers-3" aria-hidden="true"></i>
+            </a>
 
-            <div class="btn-row" data-aos="fade-up" data-aos-delay="240">
-                <a class="btn btn--primary" href="#contact">
-                    <span>${CONFIG.cta.primary}</span>
-                    <i data-lucide="arrow-up-right" aria-hidden="true"></i>
-                </a>
+            <a class="btn btn--secondary" href="#contact">
+                <span>Contact Us</span>
+                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+            </a>
+        </div>
 
-                <a class="btn btn--secondary" href="#services">
-                    <span>${CONFIG.cta.secondary}</span>
-                    <i data-lucide="layers-3" aria-hidden="true"></i>
-                </a>
-            </div>
-
-            <div class="home-hero__badges" data-aos="fade-up" data-aos-delay="320">
-                <ul class="badge-list" aria-label="PATNA key services">
-                    ${CONFIG.home.hero.badges.map((badge) => `
-                        <li>${badge}</li>
-                    `).join("")}
-                </ul>
-            </div>
-        `;
+        <div class="home-hero__badges" data-aos="fade-up" data-aos-delay="320">
+            <ul class="badge-list" aria-label="PATNA key services">
+                <li>
+                    <i data-lucide="badge-dollar-sign" aria-hidden="true"></i>
+                    <span>Google Ads</span>
+                </li>
+                <li>
+                    <i data-lucide="search-check" aria-hidden="true"></i>
+                    <span>SEO</span>
+                </li>
+                <li>
+                    <i data-lucide="layout-dashboard" aria-hidden="true"></i>
+                    <span>Web Design</span>
+                </li>
+                <li>
+                    <i data-lucide="mouse-pointer-click" aria-hidden="true"></i>
+                    <span>Conversion Strategy</span>
+                </li>
+            </ul>
+        </div>
+    `;
     }
 
     function renderHeroPanel() {
         const panel = qs("[data-home-hero-panel]");
         if (!panel) return;
 
-        panel.innerHTML = `
-            <div class="hero-panel__top">
-                <span>Growth System</span>
-                <i data-lucide="sparkles" aria-hidden="true"></i>
-            </div>
-
-            <div class="hero-panel__metric">
-                <strong>6</strong>
-                <span>Focused marketing services connected into one strategic system.</span>
-            </div>
-
-            <ul class="hero-panel__list">
-                <li>Strategy-led campaign planning</li>
-                <li>Search, social, web, and local visibility</li>
-                <li>Transparent reporting and refinement</li>
-            </ul>
-        `;
+        panel.remove();
     }
 
     function renderServicesPreview() {
