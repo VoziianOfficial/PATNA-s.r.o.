@@ -9,10 +9,12 @@
         content="PATNA s.r.o. is a digital marketing agency focused on Google Ads, SEO, social media marketing, web design, conversion support, and local visibility.">
 
     <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+    
 
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/responsive.css">
 
@@ -49,21 +51,43 @@
             </div>
         </section>
 
-        <!-- 3. Services Preview -->
-        <section class="section services-preview" id="services" aria-labelledby="services-title">
-            <div class="container">
-                <div class="section-heading section-heading--center">
-                    <p class="eyebrow">Core Services</p>
-                    <h2 id="services-title">Marketing services connected by strategy, tracking, and refinement.</h2>
-                    <p>PATNA brings together paid advertising, search visibility, social media, web design, local
-                        discovery, and conversion support into a clear growth-focused system.</p>
+    <!-- 3. Services Preview -->
+    <section class="section services-preview" id="services" aria-labelledby="services-title">
+        <div class="container">
+            <div class="section-heading section-heading--center">
+                <p class="eyebrow">Core Services</p>
+                <h2 id="services-title">Marketing services connected by strategy, tracking, and refinement.</h2>
+                <p>
+                    PATNA brings together paid advertising, search visibility, social media, web design, local
+                    discovery, and conversion support into a clear growth-focused system.
+                </p>
+            </div>
+        </div>
+    
+        <div class="container-wide">
+            <div class="services-swiper-wrap">
+                <div class="swiper services-swiper" data-services-swiper>
+                    <div class="swiper-wrapper" data-home-services>
+                        <!-- Rendered by home.js -->
+                    </div>
                 </div>
-
-                <div class="services-preview__grid" data-home-services>
-                    <!-- Rendered by home.js -->
+    
+                <div class="services-swiper__controls" aria-label="Services slider controls">
+                    <button class="services-swiper__button services-swiper__button--prev" type="button" data-services-prev
+                        aria-label="Previous service">
+                        <i data-lucide="arrow-left" aria-hidden="true"></i>
+                    </button>
+    
+                    <div class="services-swiper__pagination" data-services-pagination></div>
+    
+                    <button class="services-swiper__button services-swiper__button--next" type="button" data-services-next
+                        aria-label="Next service">
+                        <i data-lucide="arrow-right" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- 5. About PATNA -->
         <section class="section section--white about-section" id="about" aria-labelledby="about-title">
@@ -241,6 +265,7 @@
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="./js/config.js"></script>
     <script src="./js/main.js"></script>

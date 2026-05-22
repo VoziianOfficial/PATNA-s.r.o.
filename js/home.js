@@ -86,35 +86,78 @@
         if (!container) return;
 
         container.innerHTML = CONFIG.services.map((service, index) => `
-            <article class="service-card" data-aos="fade-up" data-aos-delay="${index * 70}">
-                <div class="service-card__media" aria-hidden="true">
-                    <img src="${service.image}" alt="" loading="lazy">
-                </div>
+        <article class="swiper-slide service-slide" data-aos="fade-up" data-aos-delay="${index * 70}">
+            <a class="service-card service-card--swiper" href="${service.href}" aria-label="Learn more about ${service.title}">
+                <img class="service-card__bg" src="${service.image}" alt="" loading="lazy">
 
-                <div class="service-card__content">
-                    <div class="service-card__top">
-                        <span class="service-card__icon">
-                            <i data-lucide="${service.icon}" aria-hidden="true"></i>
-                        </span>
-                        <span class="service-card__kicker">${service.kicker}</span>
-                    </div>
+                <span class="service-card__shade" aria-hidden="true"></span>
 
-                    <div>
-                        <h3>${service.title}</h3>
-                        <p>${service.cardText}</p>
-                    </div>
+                <span class="service-card__number">
+                    ${String(index + 1).padStart(2, "0")}
+                </span>
 
-                    <ul class="service-card__bullets">
-                        ${service.bullets.map((bullet) => `<li>${bullet}</li>`).join("")}
-                    </ul>
+                <span class="service-card__icon">
+                    <i data-lucide="${service.icon}" aria-hidden="true"></i>
+                </span>
 
-                    <a class="service-card__link" href="${service.href}">
-                        <span>Learn More</span>
+                <span class="service-card__hover">
+                    <span class="service-card__kicker">${service.kicker}</span>
+                    <span class="service-card__title">${service.title}</span>
+                    <span class="service-card__text">${service.cardText}</span>
+
+                    <span class="service-card__more">
+                        Explore Service
                         <i data-lucide="arrow-up-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
-        `).join("");
+                    </span>
+                </span>
+            </a>
+        </article>
+    `).join("");
+    }
+
+    function initServicesSwiper() {
+        const swiperElement = qs("[data-services-swiper]");
+        if (!swiperElement || typeof Swiper === "undefined") return;
+
+        new Swiper(swiperElement, {
+            loop: true,
+            speed: 760,
+            grabCursor: true,
+            watchOverflow: true,
+            slidesPerView: 1,
+            spaceBetween: 18,
+
+            autoplay: {
+                delay: 3200,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
+            },
+
+            pagination: {
+                el: "[data-services-pagination]",
+                clickable: true
+            },
+
+            navigation: {
+                nextEl: "[data-services-next]",
+                prevEl: "[data-services-prev]"
+            },
+
+            keyboard: {
+                enabled: true
+            },
+
+            breakpoints: {
+                760: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                1120: {
+                    slidesPerView: 3,
+                    spaceBetween: 22
+                }
+            }
+        });
     }
 
     function renderTrustStrip() {
@@ -414,6 +457,7 @@
         renderHeroContent();
         renderHeroPanel();
         renderServicesPreview();
+        initServicesSwiper();
         renderTrustStrip();
         initCountUpStats();
         renderAboutSection();
