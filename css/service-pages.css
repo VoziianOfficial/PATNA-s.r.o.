@@ -3104,3 +3104,332 @@
         transform: none !important;
     }
 }
+
+/* SERVICE PAGES — MOBILE CENTERED SECTION HEADINGS */
+@media (max-width: 680px) {
+
+    /* общие заголовки секций */
+    .service-page .section-heading,
+    .service-page .service-flow__heading,
+    .service-page .service-road__heading,
+    .service-page .marketing-signals__heading {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        align-items: center !important;
+    }
+
+    .service-page .section-heading .eyebrow,
+    .service-page .service-flow__eyebrow,
+    .service-page .marketing-signals__heading .eyebrow,
+    .service-page .service-road__heading .eyebrow {
+        display: block !important;
+        width: fit-content !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    .service-page .section-heading h2,
+    .service-page .service-flow__heading h2,
+    .service-page .service-road__heading h2,
+    .service-page .marketing-signals__heading h2 {
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    .service-page .section-heading p,
+    .service-page .service-flow__heading>p,
+    .service-page .service-road__heading p:not(.eyebrow),
+    .service-page .marketing-signals__heading p:not(.eyebrow) {
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    /* Service Scope: центрируем только верхний текст карточки, список внутри оставляем читаемым */
+    .service-page .service-scope__panel--content {
+        text-align: center !important;
+        align-items: center !important;
+    }
+
+    .service-page .service-scope__panel--content .eyebrow,
+    .service-page .service-scope__panel--content h2,
+    .service-page .service-scope__lead {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    .service-page .service-scope__items {
+        width: 100% !important;
+        text-align: left !important;
+    }
+
+    /* Why This Service Matters */
+    .service-page .matters-content {
+        text-align: center !important;
+    }
+
+    .service-page .matters-content h2,
+    .service-page .matters-content p {
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    /* Strategy / Method */
+    .service-page .method-panel {
+        text-align: center !important;
+    }
+
+    .service-page .method-panel h2,
+    .service-page .method-panel p {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    /* FAQ + CTA */
+    .service-page .service-faq-cta .section-heading {
+        text-align: center !important;
+    }
+
+    .service-page .service-faq-cta .section-heading h2,
+    .service-page .service-faq-cta .section-heading p {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+}
+
+/* SERVICE PAGES — MOBILE CENTER ONLY HEADINGS */
+@media (max-width: 680px) {
+
+    /* Hero title only */
+    .service-page .service-title {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    /* Do NOT center hero text/buttons/badges */
+    .service-page .service-hero__content {
+        text-align: left !important;
+    }
+
+    .service-page .service-hero__text,
+    .service-page .service-hero__actions,
+    .service-page .badge-list {
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        justify-content: flex-start !important;
+    }
+
+    /* Section headings only */
+    .service-page .section-heading h2,
+    .service-page .service-flow__heading h2,
+    .service-page .service-road__heading h2,
+    .service-page .marketing-signals__heading h2,
+    .service-page .service-scope__panel--content h2,
+    .service-page .matters-content h2,
+    .service-page .method-panel h2 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    /* Eyebrow можно тоже оставить по центру как часть заголовка */
+    .service-page .eyebrow,
+    .service-page .service-flow__eyebrow {
+        width: fit-content !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    /* Paragraphs/descriptions stay natural */
+    .service-page .section-heading p,
+    .service-page .service-flow__heading>p,
+    .service-page .service-road__heading p:not(.eyebrow),
+    .service-page .marketing-signals__heading p:not(.eyebrow),
+    .service-page .service-scope__lead,
+    .service-page .matters-content p,
+    .service-page .method-panel p {
+        text-align: left !important;
+    }
+}
+
+/* SERVICE HERO — HIDE BADGE LIST ON MOBILE */
+@media (max-width: 680px) {
+
+    .service-page .service-hero .badge-list,
+    .service-page .service-hero .badge-list.aos-init,
+    .service-page .service-hero .badge-list.aos-animate {
+        display: none !important;
+    }
+}
+
+/* SERVICE HERO PANEL — MOBILE ICON TOP RIGHT */
+@media (max-width: 680px) {
+    .service-page .service-hero__panel {
+        position: relative !important;
+        padding: 22px 78px 22px 22px !important;
+    }
+
+    .service-page .service-hero__panel-icon {
+        position: absolute !important;
+        top: 18px !important;
+        right: 18px !important;
+        width: 46px !important;
+        height: 46px !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        z-index: 3 !important;
+    }
+
+    .service-page .service-hero__panel-icon svg {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .service-page .service-hero__panel h2 {
+        padding-right: 0 !important;
+    }
+}
+
+/* SERVICE HERO — TABLET CENTERED FULL WIDTH CONTENT */
+@media (min-width: 681px) and (max-width: 1180px) {
+    .service-page .service-hero {
+        min-height: 720px !important;
+        padding: 148px 0 76px !important;
+        align-items: center !important;
+    }
+
+    .service-page .service-hero__inner {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+        align-items: center !important;
+        justify-items: center !important;
+        text-align: center !important;
+    }
+
+    .service-page .service-hero__content {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    .service-page .service-title {
+        width: 100% !important;
+        max-width: 980px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    .service-page .service-hero__text {
+        max-width: 760px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    .service-page .service-hero__actions {
+        justify-content: center !important;
+    }
+
+    .service-page .badge-list {
+        justify-content: center !important;
+    }
+
+    .service-page .service-hero__panel {
+        width: min(100%, 760px) !important;
+        max-width: 760px !important;
+        margin: 0 auto !important;
+        text-align: left !important;
+    }
+}
+@media (min-width: 681px) and (max-width: 1180px) {
+    .service-page .service-hero__panel {
+        display: none !important;
+    }
+}
+
+/* MARKETING SIGNALS — MOBILE 2 COLUMNS */
+@media (max-width: 680px) {
+    .service-page .marketing-signals__list {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        text-align: left !important;
+    }
+
+    .service-page .marketing-signals__signal {
+        position: relative !important;
+        display: flex !important;
+        align-items: flex-end !important;
+        min-height: 62px !important;
+        padding: 14px !important;
+        white-space: normal !important;
+        border: 1px solid rgba(15, 18, 25, 0.1) !important;
+        border-bottom: 1px solid rgba(15, 18, 25, 0.1) !important;
+        background:
+            linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(239, 242, 246, 0.94)) !important;
+        box-shadow:
+            0 12px 30px rgba(13, 20, 33, 0.06),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        color: #151922 !important;
+        font-size: 0.92rem !important;
+        font-weight: 760 !important;
+        line-height: 1.12 !important;
+        letter-spacing: -0.035em !important;
+        overflow: hidden !important;
+        transition:
+            transform var(--transition-base),
+            border-color var(--transition-base),
+            background var(--transition-base),
+            box-shadow var(--transition-base);
+    }
+
+    .service-page .marketing-signals__signal::after {
+        display: none !important;
+    }
+
+    .service-page .marketing-signals__signal::before {
+        content: "";
+        position: absolute;
+        left: 14px !important;
+        right: 14px !important;
+        top: 0 !important;
+        bottom: auto !important;
+        width: auto !important;
+        height: 2px !important;
+        opacity: 0.45 !important;
+        background: linear-gradient(90deg, #9aa1ad, transparent) !important;
+        transform: none !important;
+    }
+
+    .service-page .marketing-signals__signal:hover {
+        transform: translateY(-2px) !important;
+        border-color: rgba(15, 18, 25, 0.22) !important;
+        background: #ffffff !important;
+        box-shadow:
+            0 16px 36px rgba(13, 20, 33, 0.09),
+            inset 0 1px 0 rgba(255, 255, 255, 0.96);
+    }
+}
