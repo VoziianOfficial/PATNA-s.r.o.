@@ -1,0 +1,408 @@
+@media (max-width: 1440px) {
+    :root {
+        --container-wide: 1260px;
+    }
+
+    .section {
+        padding: 96px 0;
+    }
+
+    .section--tight {
+        padding: 70px 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --container: 1040px;
+        --container-wide: 1120px;
+    }
+
+    .card-grid,
+    .card-grid--4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .section-heading h1,
+    .hero-title {
+        font-size: clamp(3rem, 7vw, 5.7rem);
+    }
+
+    .section-heading h2 {
+        font-size: clamp(2.25rem, 5vw, 4rem);
+    }
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --header-height: 78px;
+    }
+
+    .container,
+    .container-wide {
+        width: min(100% - 32px, var(--container));
+    }
+
+    .section {
+        padding: 82px 0;
+    }
+
+    .section--tight {
+        padding: 62px 0;
+    }
+
+    .section-shell {
+        border-radius: 34px;
+    }
+
+    .card-grid,
+    .card-grid--2,
+    .card-grid--4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cookie-banner {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+
+    .cookie-banner__actions {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-heading {
+        margin-bottom: 34px;
+    }
+
+    .section-heading p,
+    .hero-text,
+    .lead {
+        font-size: 1rem;
+    }
+
+    .btn-row {
+        margin-top: 26px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-form__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --radius-xl: 34px;
+        --radius-lg: 26px;
+        --radius-md: 20px;
+    }
+
+    .container,
+    .container-wide {
+        width: min(100% - 26px, var(--container));
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section--tight {
+        padding: 54px 0;
+    }
+
+    .section-heading h1,
+    .hero-title,
+    .service-title,
+    .legal-title {
+        letter-spacing: -0.06em;
+    }
+
+    .section-heading h2 {
+        letter-spacing: -0.055em;
+    }
+
+    .card-grid,
+    .card-grid--2,
+    .card-grid--4 {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        min-height: 46px;
+        padding: 12px 17px;
+    }
+
+    .btn-row {
+        gap: 10px;
+    }
+
+    .badge-list {
+        gap: 8px;
+    }
+
+    .badge,
+    .badge-list span,
+    .badge-list li {
+        min-height: 32px;
+        padding: 7px 11px;
+        font-size: 0.78rem;
+    }
+
+    .faq-item__button {
+        padding: 18px;
+    }
+
+    .faq-item__panel {
+        padding: 0 18px 18px;
+    }
+
+    .form-field textarea {
+        min-height: 104px;
+    }
+
+    .cookie-banner {
+        bottom: 12px;
+        width: min(calc(100% - 24px), 1040px);
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .cookie-banner__actions {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cookie-banner .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    html {
+        font-size: 15px;
+    }
+
+    .container,
+    .container-wide {
+        width: min(100% - 22px, var(--container));
+    }
+
+    .section {
+        padding: 62px 0;
+    }
+
+    .section--tight {
+        padding: 48px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 28px;
+    }
+
+    .section-heading h1,
+    .hero-title {
+        font-size: clamp(2.72rem, 14vw, 4.2rem);
+    }
+
+    .section-heading h2 {
+        font-size: clamp(2.05rem, 10vw, 3.3rem);
+    }
+
+    .section-heading p,
+    .hero-text,
+    .lead {
+        line-height: 1.68;
+    }
+
+    .btn-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-row .btn {
+        width: 100%;
+    }
+
+    .glass-card,
+    .light-card {
+        border-radius: 22px;
+    }
+
+    .contact-form {
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        border-radius: 14px;
+    }
+
+    .cookie-banner__links {
+        gap: 9px;
+    }
+
+    .cookie-banner__text p {
+        font-size: 0.84rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .container,
+    .container-wide {
+        width: min(100% - 20px, var(--container));
+    }
+
+    .section {
+        padding: 56px 0;
+    }
+
+    .section--tight {
+        padding: 42px 0;
+    }
+
+    .eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 0.13em;
+    }
+
+    .section-heading h1,
+    .hero-title,
+    .service-title,
+    .legal-title {
+        font-size: clamp(2.45rem, 15vw, 3.65rem);
+        line-height: 1;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(1.95rem, 11vw, 2.85rem);
+        line-height: 1.03;
+    }
+
+    .btn {
+        min-height: 45px;
+        padding: 12px 15px;
+        font-size: 0.88rem;
+    }
+
+    .icon-bubble {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+    }
+
+    .icon-bubble svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    .faq-item {
+        border-radius: 18px;
+    }
+
+    .faq-item__button {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .faq-item__panel {
+        padding: 0 16px 16px;
+    }
+
+    .cookie-banner__actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 360px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container,
+    .container-wide {
+        width: min(100% - 18px, var(--container));
+    }
+
+    .section-heading h1,
+    .hero-title,
+    .service-title,
+    .legal-title {
+        font-size: 2.3rem;
+    }
+
+    .section-heading h2 {
+        font-size: 1.85rem;
+    }
+
+    .btn {
+        padding-inline: 13px;
+    }
+}
+
+/* Global overflow safety */
+.page,
+.home-page,
+.service-page,
+.legal-page,
+.site-header,
+.site-footer,
+section,
+div,
+article,
+aside,
+main,
+header,
+footer {
+    min-width: 0;
+}
+
+pre,
+code {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+iframe {
+    max-width: 100%;
+    border: 0;
+}
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+}
+
+/* Better touch behavior */
+@media (hover: none) {
+
+    .glass-card:hover,
+    .light-card:hover,
+    .service-card:hover,
+    .benefit-card:hover,
+    .process-card:hover,
+    .method-item:hover,
+    .related-card:hover,
+    .focus-pill:hover {
+        transform: none;
+    }
+
+    .btn:hover {
+        transform: none;
+    }
+}
