@@ -1,10 +1,18 @@
+[data-site-header] {
+    position: relative;
+    z-index: 1000;
+}
+
 .site-header {
-    position: sticky;
+    position: fixed;
     top: 14px;
+    left: 50%;
     z-index: 1000;
     width: min(calc(100% - 28px), var(--container-wide));
-    margin: 14px auto 0;
+    margin: 0;
+    transform: translateX(-50%);
     transition:
+        top var(--transition-base),
         transform var(--transition-base),
         background var(--transition-base),
         border-color var(--transition-base),
