@@ -2993,3 +2993,114 @@
     }
 }
 
+/* SERVICE FLOW — ICON TOP RIGHT IN EACH ITEM */
+.service-flow__item {
+    position: relative !important;
+    padding: 24px 82px 24px 22px !important;
+}
+
+.service-flow__icon {
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    margin: 0 !important;
+    z-index: 3 !important;
+}
+
+.service-flow__copy {
+    padding-top: 42px;
+}
+
+/* hover остается аккуратный */
+.service-flow__item:hover .service-flow__icon {
+    transform: translateY(-3px) scale(1.04) !important;
+}
+
+@media (max-width: 1180px) {
+    .service-flow__item {
+        padding: 22px 78px 22px 20px !important;
+    }
+
+    .service-flow__icon {
+        top: 18px !important;
+        right: 18px !important;
+    }
+
+    .service-flow__copy {
+        padding-top: 38px;
+    }
+}
+
+@media (max-width: 680px) {
+    .service-flow__item {
+        display: block !important;
+        padding: 18px 68px 18px 14px !important;
+    }
+
+    .service-flow__number {
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    .service-flow__icon {
+        top: 16px !important;
+        right: 14px !important;
+        width: 44px !important;
+        height: 44px !important;
+    }
+
+    .service-flow__copy {
+        padding-top: 0;
+    }
+
+    .service-flow__item:hover .service-flow__icon {
+        transform: scale(1.04) !important;
+    }
+}
+
+/* METHOD LIST — MOBILE BADGE LEFT */
+@media (max-width: 680px) {
+    .method-section .method-list {
+        gap: 10px !important;
+    }
+
+    .method-section .method-item {
+        position: relative !important;
+        display: grid !important;
+        grid-template-columns: 42px minmax(0, 1fr) !important;
+        gap: 12px !important;
+        align-items: start !important;
+        min-height: auto !important;
+        padding: 15px 14px !important;
+        border-radius: 0 !important;
+    }
+
+    .method-section .method-item>span {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        left: auto !important;
+        width: 42px !important;
+        height: 42px !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        z-index: 3 !important;
+        font-size: 0.76rem !important;
+    }
+
+    .method-section .method-item h3 {
+        margin: 0 0 6px !important;
+        font-size: 1rem !important;
+        line-height: 1.08 !important;
+    }
+
+    .method-section .method-item p {
+        margin: 0 !important;
+        font-size: 0.82rem !important;
+        line-height: 1.42 !important;
+    }
+
+    .method-section .method-item:hover {
+        transform: none !important;
+    }
+}
