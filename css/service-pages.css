@@ -2239,3 +2239,381 @@
         transform: translateX(4px);
     }
 }
+
+/* METHOD SECTION — SIDEBAR + NAV CARD */
+.method-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(31, 95, 255, 0.055), transparent 30rem),
+        linear-gradient(180deg, #ffffff 0%, #f5f7fa 100%);
+}
+
+.method-section .method-layout {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.18fr);
+    gap: clamp(28px, 4.5vw, 56px);
+    align-items: start;
+}
+
+.method-sidebar {
+    display: grid;
+    gap: 16px;
+    align-self: start;
+}
+
+/* optional sticky only on desktop */
+@media (min-width: 1181px) {
+    .method-sidebar {
+        position: sticky;
+        top: calc(var(--header-height, 84px) + 28px);
+    }
+}
+
+/* left main card */
+.method-section .method-panel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.method-section .method-panel:hover {
+    transform: translateY(-5px);
+    border-color: rgba(15, 18, 25, 0.18);
+    box-shadow:
+        0 26px 72px rgba(13, 20, 33, 0.13),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* small navigation card */
+.method-nav-card {
+    position: relative;
+    overflow: hidden;
+    padding: 18px;
+    border: 1px solid rgba(15, 18, 25, 0.1);
+    border-radius: 0;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(239, 242, 246, 0.92));
+    box-shadow:
+        0 18px 48px rgba(13, 20, 33, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.method-nav-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.65;
+    background:
+        linear-gradient(rgba(15, 18, 25, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 18, 25, 0.028) 1px, transparent 1px);
+    background-size: 42px 42px;
+}
+
+.method-nav-card p {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 14px;
+    color: rgba(16, 18, 22, 0.54);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.method-nav-card__links {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.method-nav-card__links a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 46px;
+    padding: 11px 12px;
+    overflow: hidden;
+    color: #151922;
+    border: 1px solid rgba(15, 18, 25, 0.1);
+    background: rgba(255, 255, 255, 0.68);
+    font-size: 0.84rem;
+    font-weight: 900;
+    line-height: 1.2;
+    text-decoration: none;
+    transition:
+        transform var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base),
+        color var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.method-nav-card__links a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.8), transparent 40%),
+        linear-gradient(135deg, #2b3038 0%, #171b22 100%);
+    transition: opacity var(--transition-base);
+}
+
+.method-nav-card__links a span,
+.method-nav-card__links a {
+    position: relative;
+    z-index: 1;
+}
+
+.method-nav-card__links a span {
+    color: rgba(16, 18, 22, 0.42);
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    transition: color var(--transition-base);
+}
+
+.method-nav-card__links a:hover {
+    transform: translateY(-3px);
+    color: #ffffff;
+    border-color: rgba(15, 18, 25, 0.34);
+    background: #1d222b;
+    box-shadow: 0 16px 34px rgba(13, 20, 33, 0.18);
+}
+
+.method-nav-card__links a:hover::before {
+    opacity: 1;
+}
+
+.method-nav-card__links a:hover span {
+    color: rgba(255, 255, 255, 0.56);
+}
+
+/* keep right cards clean */
+.method-section .method-list {
+    display: grid;
+    gap: 16px;
+}
+
+.method-section .method-item {
+    border-radius: 0;
+}
+
+/* TABLET */
+@media (max-width: 1180px) {
+    .method-section .method-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .method-sidebar {
+        position: relative;
+        top: auto;
+        max-width: 860px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .method-nav-card__links {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .method-nav-card__links a {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 680px) {
+    .method-section {
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    .method-sidebar {
+        gap: 12px;
+    }
+
+    .method-nav-card {
+        padding: 16px;
+    }
+
+    .method-nav-card__links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+    }
+
+    .method-nav-card__links a {
+        min-height: 44px;
+        padding: 10px;
+        font-size: 0.78rem;
+    }
+
+    .method-nav-card__links a:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* METHOD SIDEBAR — FIX PANEL OVER NAV */
+.method-sidebar {
+    display: grid !important;
+    gap: 16px !important;
+    align-self: start !important;
+}
+
+/* sticky только на общем левом блоке */
+@media (min-width: 1181px) {
+    .method-sidebar {
+        position: sticky !important;
+        top: calc(var(--header-height, 84px) + 28px) !important;
+    }
+}
+
+/* сама верхняя карточка НЕ sticky */
+.method-sidebar .method-panel,
+.method-sidebar .method-panel.light-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    z-index: 1 !important;
+}
+
+/* навигация всегда ниже карточки */
+.method-sidebar .method-nav-card {
+    position: relative !important;
+    z-index: 2 !important;
+    margin-top: 0 !important;
+}
+
+/* tablet/mobile */
+@media (max-width: 1180px) {
+    .method-sidebar {
+        position: relative !important;
+        top: auto !important;
+        gap: 14px !important;
+    }
+
+    .method-sidebar .method-panel,
+    .method-sidebar .method-panel.light-card {
+        position: relative !important;
+        top: auto !important;
+        transform: none !important;
+    }
+}
+
+
+/* METHOD SECTION — LIGHT BORDER HOVERS ONLY */
+.method-section .method-panel,
+.method-section .method-nav-card,
+.method-section .method-item {
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base),
+        background var(--transition-base);
+}
+
+/* main left card hover — light only */
+.method-section .method-panel:hover {
+    transform: translateY(-3px) !important;
+    background: #ffffff !important;
+    border-color: rgba(15, 18, 25, 0.22) !important;
+    box-shadow:
+        0 18px 48px rgba(13, 20, 33, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* nav card hover — no dark effect */
+.method-section .method-nav-card:hover {
+    transform: translateY(-3px);
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(244, 246, 249, 0.96)) !important;
+    border-color: rgba(15, 18, 25, 0.18) !important;
+    box-shadow:
+        0 18px 46px rgba(13, 20, 33, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.92) !important;
+}
+
+/* navigation buttons — remove dark hover */
+.method-section .method-nav-card__links a {
+    color: #151922 !important;
+    background: rgba(255, 255, 255, 0.72) !important;
+    border: 1px solid rgba(15, 18, 25, 0.1) !important;
+    box-shadow: none !important;
+}
+
+.method-section .method-nav-card__links a::before {
+    display: none !important;
+}
+
+.method-section .method-nav-card__links a:hover {
+    transform: translateY(-2px) !important;
+    color: #101216 !important;
+    background: #ffffff !important;
+    border-color: rgba(15, 18, 25, 0.28) !important;
+    box-shadow:
+        0 12px 28px rgba(13, 20, 33, 0.08) !important;
+}
+
+.method-section .method-nav-card__links a:hover span {
+    color: rgba(16, 18, 22, 0.52) !important;
+}
+
+/* right method cards — remove dark/gray filled hover */
+.method-section .method-item::before,
+.method-section .method-item::after {
+    display: none !important;
+}
+
+.method-section .method-item:hover {
+    transform: translateY(-3px) !important;
+    background: #ffffff !important;
+    border-color: rgba(15, 18, 25, 0.24) !important;
+    box-shadow:
+        0 18px 46px rgba(13, 20, 33, 0.09) !important;
+}
+
+.method-section .method-item:hover h3 {
+    color: #151922 !important;
+}
+
+.method-section .method-item:hover p {
+    color: #5f6875 !important;
+}
+
+/* number badge — light hover, not dark */
+.method-section .method-item:hover>span {
+    color: #151922 !important;
+    background:
+        linear-gradient(135deg, #ffffff 0%, #e8ecf2 52%, #c8d0da 100%) !important;
+    box-shadow:
+        0 12px 26px rgba(13, 20, 33, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* mobile — even softer */
+@media (max-width: 680px) {
+
+    .method-section .method-panel:hover,
+    .method-section .method-nav-card:hover,
+    .method-section .method-item:hover,
+    .method-section .method-nav-card__links a:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
