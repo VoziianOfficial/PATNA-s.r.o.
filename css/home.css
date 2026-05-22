@@ -4771,14 +4771,7 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.76) !important;
 }
 
-/* number spans */
-.service-card__number,
-.benefits-horizontal__number,
-.process-switcher__number,
-.approach-rail__number,
-.process-visual__step {
-    color: var(--number-color-soft) !important;
-}
+
 
 .service-card--swiper:hover .service-card__number,
 .benefits-horizontal__item:hover .benefits-horizontal__number,
@@ -4786,7 +4779,7 @@
 .process-switcher__item.is-active .process-switcher__number,
 .approach-rail__point:hover .approach-rail__number,
 .approach-rail__point.is-active .approach-rail__number {
-    color: var(--number-color-light) !important;
+    color: var(--color-blue) !important;
 }
 
 /* numbered square spans in about / growth */
